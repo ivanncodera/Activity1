@@ -1,116 +1,158 @@
+using System.Drawing.Drawing2D;
+
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        private Button currentButton;
+        private Button? currentButton;
+        private readonly Color sideMenuColor = Color.FromArgb(45, 52, 70);
+        private readonly Color buttonHoverColor = Color.FromArgb(70, 80, 105);
 
         public Form1()
         {
             InitializeComponent();
+            InitializeUI();
+        }
 
-            // Add hover effects and design enhancements
-            SetButtonStyle(btnNavigateToCodera);
-            SetButtonStyle(btnGilles);
-            SetButtonStyle(btnMongado);
+        private void InitializeUI()
+        {
+            // Apply styles to navigation buttons
+            foreach (Control control in panelSideMenu.Controls)
+            {
+                if (control is Button button && button != button1) // Exclude back button
+                {
+                    SetButtonStyle(button);
+                }
+            }
+
+            // Style the back button separately
+            StyleBackButton();
+
+            // Apply visual enhancements
+            ApplyRoundedCorners(pictureBox1, 15);
+            AddShadowToPanel(panelContent);
+        }
+
+        private void StyleBackButton()
+        {
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.BackColor = Color.FromArgb(35, 40, 55);
+            button1.ForeColor = Color.White;
         }
 
         private void SetButtonStyle(Button button)
         {
-            // This helps with creating the transition effect
-            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(70, 80, 105);
+            // Basic button styling
+            button.FlatAppearance.BorderSize = 0;
+            button.FlatAppearance.MouseOverBackColor = buttonHoverColor;
+            button.TextAlign = ContentAlignment.MiddleCenter;
+
+            // Hover animation
+            button.MouseEnter += (s, e) => button.Padding = new Padding(20, 0, 0, 0);
+            button.MouseLeave += (s, e) =>
+            {
+                if (button != currentButton)
+                    button.Padding = new Padding(0, 0, 0, 0);
+            };
         }
 
-        private void ActivateButton(object btnSender)
+        private void ActivateButton(object? btnSender)
         {
-            if (btnSender != null)
-            {
-                if (currentButton != (Button)btnSender)
-                {
-                    // Deactivate previous button
-                    DisableButton();
+            if (btnSender is not Button clickedButton) return;
 
-                    // Highlight the selected button
-                    currentButton = (Button)btnSender;
-                    currentButton.BackColor = Color.FromArgb(70, 80, 105);
-                    currentButton.ForeColor = Color.White;
-                    currentButton.Font = new Font("Segoe UI", 11.5F, FontStyle.Regular, GraphicsUnit.Point);
+            if (currentButton != clickedButton)
+            {
+                // Reset all buttons
+                foreach (Control control in panelSideMenu.Controls)
+                {
+                    if (control is Button btn && btn != button1)
+                    {
+                        btn.BackColor = sideMenuColor;
+                        btn.ForeColor = Color.White;
+                        btn.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+                    }
                 }
+
+                // Highlight selected button
+                currentButton = clickedButton;
+                currentButton.BackColor = buttonHoverColor;
+                currentButton.ForeColor = Color.White;
+                currentButton.Font = new Font("Segoe UI", 11.5F, FontStyle.Regular);
             }
         }
 
-        private void DisableButton()
+        private void ApplyRoundedCorners(Control control, int radius)
         {
-            foreach (Control previousBtn in panelSideMenu.Controls)
-            {
-                if (previousBtn.GetType() == typeof(Button))
-                {
-                    previousBtn.BackColor = Color.FromArgb(45, 52, 70);
-                    previousBtn.ForeColor = Color.White;
-                    previousBtn.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-                }
-            }
+            using GraphicsPath path = new();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(control.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(control.Width - radius, control.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, control.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            control.Region = new Region(path);
         }
+
+        private void AddShadowToPanel(Panel panel)
+        {
+            panel.Paint += (sender, e) =>
+            {
+                Rectangle rect = new(0, 0, panel.Width, panel.Height);
+                using LinearGradientBrush brush = new(
+                    rect,
+                    Color.FromArgb(10, 0, 0, 0),
+                    Color.FromArgb(30, 0, 0, 0),
+                    LinearGradientMode.Vertical);
+
+                e.Graphics.FillRectangle(brush, rect);
+            };
+        }
+
+        #region Event Handlers
 
         private void GoToForm2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            new Codera().Show();
+        }
 
-            // Create an instance of Form2
-            Codera form2 = new Codera();
+        private void btnGilles_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            new Gilles().Show();
+        }
 
-            // Show Form2
+        private void btnMongado_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            new Mongado().Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new();
             form2.Show();
+            Hide();
+        }
 
-            // Optionally, hide Form1
-            // this.Hide();
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            // Event handler required by designer
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            // Check if the clicked item is the "Go to Codera" menu item
             if (e.ClickedItem.Name == "goToForm2ToolStripMenuItem")
             {
                 GoToForm2_Click(btnNavigateToCodera, e);
             }
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        #endregion
+
+        private void panelContent_Paint(object sender, PaintEventArgs e)
         {
-            Close();
-        }
-
-        private void btnGilles_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-
-            // Create an instance of the Gilles form
-            Gilles gillesForm = new Gilles();
-
-            // Show the Gilles form
-            gillesForm.Show();
-        }
-
-        private void btnMongado_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-
-            // Create an instance of the Mongado form
-            Mongado mongadoForm = new Mongado();
-
-            // Show the Mongado form
-            mongadoForm.Show();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
-            this.Hide();
 
         }
     }

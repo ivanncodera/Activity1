@@ -101,6 +101,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.Screenshot_5_8_2025_75139_accountingandbusinesspartners_com;
             pictureBox1.Location = new Point(-7, -20);
             pictureBox1.Name = "pictureBox1";
