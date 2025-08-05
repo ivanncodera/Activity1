@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panelSideMenu = new Panel();
+            button1 = new Button();
             btnMongado = new Button();
             btnGilles = new Button();
             btnNavigateToCodera = new Button();
@@ -46,6 +47,7 @@
             // panelSideMenu
             // 
             panelSideMenu.BackColor = Color.FromArgb(45, 52, 70);
+            panelSideMenu.Controls.Add(button1);
             panelSideMenu.Controls.Add(btnMongado);
             panelSideMenu.Controls.Add(btnGilles);
             panelSideMenu.Controls.Add(btnNavigateToCodera);
@@ -55,6 +57,16 @@
             panelSideMenu.Name = "panelSideMenu";
             panelSideMenu.Size = new Size(220, 450);
             panelSideMenu.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(12, 409);
+            button1.Name = "button1";
+            button1.Size = new Size(52, 29);
+            button1.TabIndex = 2;
+            button1.Text = "BACK";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // btnMongado
             // 
@@ -189,5 +201,6 @@
         private Label labelLogo;
         private Panel panelContent;
         private PictureBox pictureBox1;
+        private Button button1;
     }
 }

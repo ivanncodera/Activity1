@@ -63,9 +63,9 @@ namespace WinFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mail_clipart_mail_logo_3 {
+        internal static System.Drawing.Bitmap Screenshot_5_8_2025_75139_accountingandbusinesspartners_com {
             get {
-                object obj = ResourceManager.GetObject("mail-clipart-mail-logo-3", resourceCulture);
+                object obj = ResourceManager.GetObject("Screenshot_5-8-2025_75139_accountingandbusinesspartners.com", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
