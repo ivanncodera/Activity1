@@ -1,4 +1,5 @@
 using System.Drawing.Drawing2D;
+using CV_Rose;
 
 namespace WinFormsApp1
 {
@@ -126,7 +127,7 @@ namespace WinFormsApp1
         private void btnMongado_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            new Mongado().Show();
+            new mongado().Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
