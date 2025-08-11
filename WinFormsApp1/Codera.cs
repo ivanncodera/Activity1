@@ -44,7 +44,7 @@ namespace WinFormsApp1
             listViewExperience.Columns[0].Width = 150;
             listViewExperience.Columns[1].Width = 150;
             listViewExperience.Columns[2].Width = 150;
-            listViewExperience.Columns[3].Width = 300;
+            listViewExperience.Columns[3].Width = 200;
             
             listViewSkills.Columns[0].Width = 400;
             listViewSkills.Columns[1].Width = 200;
@@ -326,6 +326,7 @@ namespace WinFormsApp1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            // Clear personal information
             txtFullName.Clear();
             txtAddress.Clear();
             txtPhone.Clear();
@@ -333,10 +334,12 @@ namespace WinFormsApp1
             pictureBoxPhoto.Image = null;
             photoPath = string.Empty;
 
+            // Clear all list views
             listViewEducation.Items.Clear();
             listViewExperience.Items.Clear();
             listViewSkills.Items.Clear();
 
+            // Clear all other form fields
             txtInstitution.Clear();
             txtDegree.Clear();
             txtGradYear.Clear();
@@ -348,8 +351,11 @@ namespace WinFormsApp1
             txtSkill.Clear();
             cmbProficiency.SelectedIndex = 0;
 
-            tabControl.SelectedIndex = 0;
+            // Set focus to the first field
             txtFullName.Focus();
+            
+            // Scroll the content panel to the top
+            contentPanel.AutoScrollPosition = new Point(0, 0);
         }
 
         private void btnGenerateCV_Click(object sender, EventArgs e)
