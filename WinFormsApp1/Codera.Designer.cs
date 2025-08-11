@@ -30,76 +30,66 @@
         {
             mainPanel = new Panel();
             contentPanel = new Panel();
-            // Personal Information
             lblPersonalInfo = new Label();
-            txtFullName = new TextBox();
             lblFullName = new Label();
-            txtAddress = new TextBox();
+            txtFullName = new TextBox();
             lblAddress = new Label();
-            txtPhone = new TextBox();
+            txtAddress = new TextBox();
             lblPhone = new Label();
-            txtEmail = new TextBox();
+            txtPhone = new TextBox();
             lblEmail = new Label();
+            txtEmail = new TextBox();
             pictureBoxPhoto = new PictureBox();
             btnUploadPhoto = new Button();
-            
-            // Education Section
             lblEducation = new Label();
-            txtInstitution = new TextBox();
             lblInstitution = new Label();
-            txtDegree = new TextBox();
+            txtInstitution = new TextBox();
             lblDegree = new Label();
-            txtGradYear = new TextBox();
+            txtDegree = new TextBox();
             lblGradYear = new Label();
+            txtGradYear = new TextBox();
             btnAddEducation = new Button();
             listViewEducation = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
-            
-            // Experience Section
             lblWorkExperience = new Label();
-            txtCompany = new TextBox();
             lblCompany = new Label();
-            txtPosition = new TextBox();
+            txtCompany = new TextBox();
             lblPosition = new Label();
-            txtStartDate = new TextBox();
+            txtPosition = new TextBox();
             lblStartDate = new Label();
-            txtEndDate = new TextBox();
+            txtStartDate = new TextBox();
             lblEndDate = new Label();
-            txtJobDescription = new TextBox();
+            txtEndDate = new TextBox();
             lblJobDescription = new Label();
+            txtJobDescription = new TextBox();
             btnAddExperience = new Button();
             listViewExperience = new ListView();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
-            
-            // Skills Section
             lblSkills = new Label();
-            txtSkill = new TextBox();
             lblSkill = new Label();
-            cmbProficiency = new ComboBox();
+            txtSkill = new TextBox();
             lblProficiency = new Label();
+            cmbProficiency = new ComboBox();
             btnAddSkill = new Button();
             listViewSkills = new ListView();
             columnHeader8 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
-            
             headerPanel = new Panel();
             lblTitle = new Label();
             footerPanel = new Panel();
             btnGenerateCV = new Button();
             btnClear = new Button();
-            
             mainPanel.SuspendLayout();
             contentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPhoto).BeginInit();
             headerPanel.SuspendLayout();
             footerPanel.SuspendLayout();
             SuspendLayout();
-            
             // 
             // mainPanel
             // 
@@ -110,22 +100,61 @@
             mainPanel.Location = new Point(0, 0);
             mainPanel.Margin = new Padding(3, 2, 3, 2);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(900, 700);
+            mainPanel.Size = new Size(715, 700);
             mainPanel.TabIndex = 0;
-            
             // 
             // contentPanel
             // 
             contentPanel.AutoScroll = true;
+            contentPanel.Controls.Add(lblPersonalInfo);
+            contentPanel.Controls.Add(lblFullName);
+            contentPanel.Controls.Add(txtFullName);
+            contentPanel.Controls.Add(lblAddress);
+            contentPanel.Controls.Add(txtAddress);
+            contentPanel.Controls.Add(lblPhone);
+            contentPanel.Controls.Add(txtPhone);
+            contentPanel.Controls.Add(lblEmail);
+            contentPanel.Controls.Add(txtEmail);
+            contentPanel.Controls.Add(pictureBoxPhoto);
+            contentPanel.Controls.Add(btnUploadPhoto);
+            contentPanel.Controls.Add(lblEducation);
+            contentPanel.Controls.Add(lblInstitution);
+            contentPanel.Controls.Add(txtInstitution);
+            contentPanel.Controls.Add(lblDegree);
+            contentPanel.Controls.Add(txtDegree);
+            contentPanel.Controls.Add(lblGradYear);
+            contentPanel.Controls.Add(txtGradYear);
+            contentPanel.Controls.Add(btnAddEducation);
+            contentPanel.Controls.Add(listViewEducation);
+            contentPanel.Controls.Add(lblWorkExperience);
+            contentPanel.Controls.Add(lblCompany);
+            contentPanel.Controls.Add(txtCompany);
+            contentPanel.Controls.Add(lblPosition);
+            contentPanel.Controls.Add(txtPosition);
+            contentPanel.Controls.Add(lblStartDate);
+            contentPanel.Controls.Add(txtStartDate);
+            contentPanel.Controls.Add(lblEndDate);
+            contentPanel.Controls.Add(txtEndDate);
+            contentPanel.Controls.Add(lblJobDescription);
+            contentPanel.Controls.Add(txtJobDescription);
+            contentPanel.Controls.Add(btnAddExperience);
+            contentPanel.Controls.Add(listViewExperience);
+            contentPanel.Controls.Add(lblSkills);
+            contentPanel.Controls.Add(lblSkill);
+            contentPanel.Controls.Add(txtSkill);
+            contentPanel.Controls.Add(lblProficiency);
+            contentPanel.Controls.Add(cmbProficiency);
+            contentPanel.Controls.Add(btnAddSkill);
+            contentPanel.Controls.Add(listViewSkills);
             contentPanel.Dock = DockStyle.Fill;
             contentPanel.Location = new Point(0, 45);
             contentPanel.Margin = new Padding(3, 2, 3, 2);
             contentPanel.Name = "contentPanel";
-            contentPanel.Size = new Size(900, 610);
-            contentPanel.TabIndex = 0;
             contentPanel.Padding = new Padding(20);
-            
-            // Personal Information Section
+            contentPanel.Size = new Size(715, 610);
+            contentPanel.TabIndex = 0;
+            // 
+            // lblPersonalInfo
             // 
             lblPersonalInfo.AutoSize = true;
             lblPersonalInfo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -134,8 +163,9 @@
             lblPersonalInfo.Size = new Size(172, 21);
             lblPersonalInfo.TabIndex = 0;
             lblPersonalInfo.Text = "Personal Information";
-            contentPanel.Controls.Add(lblPersonalInfo);
-            
+            // 
+            // lblFullName
+            // 
             lblFullName.AutoSize = true;
             lblFullName.Font = new Font("Segoe UI", 10F);
             lblFullName.Location = new Point(20, 55);
@@ -143,16 +173,18 @@
             lblFullName.Size = new Size(73, 19);
             lblFullName.TabIndex = 1;
             lblFullName.Text = "Full Name:";
-            contentPanel.Controls.Add(lblFullName);
-            
+            // 
+            // txtFullName
+            // 
             txtFullName.Font = new Font("Segoe UI", 10F);
             txtFullName.Location = new Point(110, 53);
             txtFullName.Margin = new Padding(3, 2, 3, 2);
             txtFullName.Name = "txtFullName";
             txtFullName.Size = new Size(350, 25);
             txtFullName.TabIndex = 0;
-            contentPanel.Controls.Add(txtFullName);
-            
+            // 
+            // lblAddress
+            // 
             lblAddress.AutoSize = true;
             lblAddress.Font = new Font("Segoe UI", 10F);
             lblAddress.Location = new Point(20, 85);
@@ -160,16 +192,18 @@
             lblAddress.Size = new Size(61, 19);
             lblAddress.TabIndex = 3;
             lblAddress.Text = "Address:";
-            contentPanel.Controls.Add(lblAddress);
-            
+            // 
+            // txtAddress
+            // 
             txtAddress.Font = new Font("Segoe UI", 10F);
             txtAddress.Location = new Point(110, 83);
             txtAddress.Margin = new Padding(3, 2, 3, 2);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(350, 25);
             txtAddress.TabIndex = 1;
-            contentPanel.Controls.Add(txtAddress);
-            
+            // 
+            // lblPhone
+            // 
             lblPhone.AutoSize = true;
             lblPhone.Font = new Font("Segoe UI", 10F);
             lblPhone.Location = new Point(20, 115);
@@ -177,16 +211,18 @@
             lblPhone.Size = new Size(51, 19);
             lblPhone.TabIndex = 5;
             lblPhone.Text = "Phone:";
-            contentPanel.Controls.Add(lblPhone);
-            
+            // 
+            // txtPhone
+            // 
             txtPhone.Font = new Font("Segoe UI", 10F);
             txtPhone.Location = new Point(110, 113);
             txtPhone.Margin = new Padding(3, 2, 3, 2);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(350, 25);
             txtPhone.TabIndex = 2;
-            contentPanel.Controls.Add(txtPhone);
-            
+            // 
+            // lblEmail
+            // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI", 10F);
             lblEmail.Location = new Point(20, 145);
@@ -194,31 +230,34 @@
             lblEmail.Size = new Size(44, 19);
             lblEmail.TabIndex = 7;
             lblEmail.Text = "Email:";
-            contentPanel.Controls.Add(lblEmail);
-            
+            // 
+            // txtEmail
+            // 
             txtEmail.Font = new Font("Segoe UI", 10F);
             txtEmail.Location = new Point(110, 143);
             txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(350, 25);
             txtEmail.TabIndex = 3;
-            contentPanel.Controls.Add(txtEmail);
-            
+            // 
+            // pictureBoxPhoto
+            // 
             pictureBoxPhoto.BackColor = Color.WhiteSmoke;
             pictureBoxPhoto.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxPhoto.Location = new Point(500, 53);
+            pictureBoxPhoto.Location = new Point(562, 51);
             pictureBoxPhoto.Margin = new Padding(3, 2, 3, 2);
             pictureBoxPhoto.Name = "pictureBoxPhoto";
             pictureBoxPhoto.Size = new Size(105, 113);
             pictureBoxPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxPhoto.TabIndex = 9;
             pictureBoxPhoto.TabStop = false;
-            contentPanel.Controls.Add(pictureBoxPhoto);
-            
+            // 
+            // btnUploadPhoto
+            // 
             btnUploadPhoto.BackColor = Color.FromArgb(45, 52, 70);
             btnUploadPhoto.FlatStyle = FlatStyle.Flat;
             btnUploadPhoto.ForeColor = Color.White;
-            btnUploadPhoto.Location = new Point(500, 170);
+            btnUploadPhoto.Location = new Point(562, 180);
             btnUploadPhoto.Margin = new Padding(3, 2, 3, 2);
             btnUploadPhoto.Name = "btnUploadPhoto";
             btnUploadPhoto.Size = new Size(105, 26);
@@ -226,9 +265,8 @@
             btnUploadPhoto.Text = "Upload Photo";
             btnUploadPhoto.UseVisualStyleBackColor = false;
             btnUploadPhoto.Click += btnUploadPhoto_Click;
-            contentPanel.Controls.Add(btnUploadPhoto);
-            
-            // Education Section
+            // 
+            // lblEducation
             // 
             lblEducation.AutoSize = true;
             lblEducation.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -237,8 +275,9 @@
             lblEducation.Size = new Size(87, 21);
             lblEducation.TabIndex = 11;
             lblEducation.Text = "Education";
-            contentPanel.Controls.Add(lblEducation);
-            
+            // 
+            // lblInstitution
+            // 
             lblInstitution.AutoSize = true;
             lblInstitution.Font = new Font("Segoe UI", 10F);
             lblInstitution.Location = new Point(20, 245);
@@ -246,16 +285,18 @@
             lblInstitution.Size = new Size(75, 19);
             lblInstitution.TabIndex = 12;
             lblInstitution.Text = "Institution:";
-            contentPanel.Controls.Add(lblInstitution);
-            
+            // 
+            // txtInstitution
+            // 
             txtInstitution.Font = new Font("Segoe UI", 10F);
             txtInstitution.Location = new Point(110, 243);
             txtInstitution.Margin = new Padding(3, 2, 3, 2);
             txtInstitution.Name = "txtInstitution";
             txtInstitution.Size = new Size(250, 25);
             txtInstitution.TabIndex = 5;
-            contentPanel.Controls.Add(txtInstitution);
-            
+            // 
+            // lblDegree
+            // 
             lblDegree.AutoSize = true;
             lblDegree.Font = new Font("Segoe UI", 10F);
             lblDegree.Location = new Point(370, 245);
@@ -263,16 +304,18 @@
             lblDegree.Size = new Size(56, 19);
             lblDegree.TabIndex = 14;
             lblDegree.Text = "Degree:";
-            contentPanel.Controls.Add(lblDegree);
-            
+            // 
+            // txtDegree
+            // 
             txtDegree.Font = new Font("Segoe UI", 10F);
             txtDegree.Location = new Point(430, 243);
             txtDegree.Margin = new Padding(3, 2, 3, 2);
             txtDegree.Name = "txtDegree";
             txtDegree.Size = new Size(250, 25);
             txtDegree.TabIndex = 6;
-            contentPanel.Controls.Add(txtDegree);
-            
+            // 
+            // lblGradYear
+            // 
             lblGradYear.AutoSize = true;
             lblGradYear.Font = new Font("Segoe UI", 10F);
             lblGradYear.Location = new Point(20, 275);
@@ -280,16 +323,18 @@
             lblGradYear.Size = new Size(72, 19);
             lblGradYear.TabIndex = 16;
             lblGradYear.Text = "Grad Year:";
-            contentPanel.Controls.Add(lblGradYear);
-            
+            // 
+            // txtGradYear
+            // 
             txtGradYear.Font = new Font("Segoe UI", 10F);
             txtGradYear.Location = new Point(110, 273);
             txtGradYear.Margin = new Padding(3, 2, 3, 2);
             txtGradYear.Name = "txtGradYear";
             txtGradYear.Size = new Size(100, 25);
             txtGradYear.TabIndex = 7;
-            contentPanel.Controls.Add(txtGradYear);
-            
+            // 
+            // btnAddEducation
+            // 
             btnAddEducation.BackColor = Color.FromArgb(45, 52, 70);
             btnAddEducation.FlatStyle = FlatStyle.Flat;
             btnAddEducation.ForeColor = Color.White;
@@ -301,12 +346,13 @@
             btnAddEducation.Text = "Add";
             btnAddEducation.UseVisualStyleBackColor = false;
             btnAddEducation.Click += btnAddEducation_Click;
-            contentPanel.Controls.Add(btnAddEducation);
-            
+            // 
+            // listViewEducation
+            // 
             listViewEducation.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             listViewEducation.FullRowSelect = true;
             listViewEducation.GridLines = true;
-            listViewEducation.Location = new Point(20, 305);
+            listViewEducation.Location = new Point(20, 302);
             listViewEducation.Margin = new Padding(3, 2, 3, 2);
             listViewEducation.MultiSelect = false;
             listViewEducation.Name = "listViewEducation";
@@ -314,16 +360,23 @@
             listViewEducation.TabIndex = 9;
             listViewEducation.UseCompatibleStateImageBehavior = false;
             listViewEducation.View = View.Details;
-            contentPanel.Controls.Add(listViewEducation);
-            
+            // 
+            // columnHeader1
+            // 
             columnHeader1.Text = "Institution";
             columnHeader1.Width = 300;
+            // 
+            // columnHeader2
+            // 
             columnHeader2.Text = "Degree";
             columnHeader2.Width = 300;
-            columnHeader3.Text = "Graduation Year";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Grad Year";
             columnHeader3.Width = 100;
-            
-            // Work Experience Section
+            // 
+            // lblWorkExperience
             // 
             lblWorkExperience.AutoSize = true;
             lblWorkExperience.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -332,8 +385,9 @@
             lblWorkExperience.Size = new Size(139, 21);
             lblWorkExperience.TabIndex = 20;
             lblWorkExperience.Text = "Work Experience";
-            contentPanel.Controls.Add(lblWorkExperience);
-            
+            // 
+            // lblCompany
+            // 
             lblCompany.AutoSize = true;
             lblCompany.Font = new Font("Segoe UI", 10F);
             lblCompany.Location = new Point(20, 435);
@@ -341,16 +395,18 @@
             lblCompany.Size = new Size(71, 19);
             lblCompany.TabIndex = 21;
             lblCompany.Text = "Company:";
-            contentPanel.Controls.Add(lblCompany);
-            
+            // 
+            // txtCompany
+            // 
             txtCompany.Font = new Font("Segoe UI", 10F);
             txtCompany.Location = new Point(110, 433);
             txtCompany.Margin = new Padding(3, 2, 3, 2);
             txtCompany.Name = "txtCompany";
             txtCompany.Size = new Size(158, 25);
             txtCompany.TabIndex = 10;
-            contentPanel.Controls.Add(txtCompany);
-            
+            // 
+            // lblPosition
+            // 
             lblPosition.AutoSize = true;
             lblPosition.Font = new Font("Segoe UI", 10F);
             lblPosition.Location = new Point(280, 435);
@@ -358,16 +414,18 @@
             lblPosition.Size = new Size(60, 19);
             lblPosition.TabIndex = 23;
             lblPosition.Text = "Position:";
-            contentPanel.Controls.Add(lblPosition);
-            
+            // 
+            // txtPosition
+            // 
             txtPosition.Font = new Font("Segoe UI", 10F);
             txtPosition.Location = new Point(350, 433);
             txtPosition.Margin = new Padding(3, 2, 3, 2);
             txtPosition.Name = "txtPosition";
             txtPosition.Size = new Size(330, 25);
             txtPosition.TabIndex = 11;
-            contentPanel.Controls.Add(txtPosition);
-            
+            // 
+            // lblStartDate
+            // 
             lblStartDate.AutoSize = true;
             lblStartDate.Font = new Font("Segoe UI", 10F);
             lblStartDate.Location = new Point(20, 465);
@@ -375,16 +433,18 @@
             lblStartDate.Size = new Size(74, 19);
             lblStartDate.TabIndex = 25;
             lblStartDate.Text = "Start Date:";
-            contentPanel.Controls.Add(lblStartDate);
-            
+            // 
+            // txtStartDate
+            // 
             txtStartDate.Font = new Font("Segoe UI", 10F);
             txtStartDate.Location = new Point(110, 463);
             txtStartDate.Margin = new Padding(3, 2, 3, 2);
             txtStartDate.Name = "txtStartDate";
             txtStartDate.Size = new Size(132, 25);
             txtStartDate.TabIndex = 12;
-            contentPanel.Controls.Add(txtStartDate);
-            
+            // 
+            // lblEndDate
+            // 
             lblEndDate.AutoSize = true;
             lblEndDate.Font = new Font("Segoe UI", 10F);
             lblEndDate.Location = new Point(280, 465);
@@ -392,16 +452,18 @@
             lblEndDate.Size = new Size(68, 19);
             lblEndDate.TabIndex = 27;
             lblEndDate.Text = "End Date:";
-            contentPanel.Controls.Add(lblEndDate);
-            
+            // 
+            // txtEndDate
+            // 
             txtEndDate.Font = new Font("Segoe UI", 10F);
             txtEndDate.Location = new Point(350, 463);
             txtEndDate.Margin = new Padding(3, 2, 3, 2);
             txtEndDate.Name = "txtEndDate";
             txtEndDate.Size = new Size(132, 25);
             txtEndDate.TabIndex = 13;
-            contentPanel.Controls.Add(txtEndDate);
-            
+            // 
+            // lblJobDescription
+            // 
             lblJobDescription.AutoSize = true;
             lblJobDescription.Font = new Font("Segoe UI", 10F);
             lblJobDescription.Location = new Point(20, 495);
@@ -409,16 +471,18 @@
             lblJobDescription.Size = new Size(81, 19);
             lblJobDescription.TabIndex = 29;
             lblJobDescription.Text = "Description:";
-            contentPanel.Controls.Add(lblJobDescription);
-            
+            // 
+            // txtJobDescription
+            // 
             txtJobDescription.Font = new Font("Segoe UI", 10F);
             txtJobDescription.Location = new Point(110, 493);
             txtJobDescription.Margin = new Padding(3, 2, 3, 2);
             txtJobDescription.Name = "txtJobDescription";
             txtJobDescription.Size = new Size(470, 25);
             txtJobDescription.TabIndex = 14;
-            contentPanel.Controls.Add(txtJobDescription);
-            
+            // 
+            // btnAddExperience
+            // 
             btnAddExperience.BackColor = Color.FromArgb(45, 52, 70);
             btnAddExperience.FlatStyle = FlatStyle.Flat;
             btnAddExperience.ForeColor = Color.White;
@@ -430,8 +494,9 @@
             btnAddExperience.Text = "Add";
             btnAddExperience.UseVisualStyleBackColor = false;
             btnAddExperience.Click += btnAddExperience_Click;
-            contentPanel.Controls.Add(btnAddExperience);
-            
+            // 
+            // listViewExperience
+            // 
             listViewExperience.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
             listViewExperience.FullRowSelect = true;
             listViewExperience.GridLines = true;
@@ -443,19 +508,29 @@
             listViewExperience.TabIndex = 16;
             listViewExperience.UseCompatibleStateImageBehavior = false;
             listViewExperience.View = View.Details;
-            contentPanel.Controls.Add(listViewExperience);
-            
+            // 
+            // columnHeader4
+            // 
             columnHeader4.Text = "Company";
             columnHeader4.Width = 150;
+            // 
+            // columnHeader5
+            // 
             columnHeader5.Text = "Position";
             columnHeader5.Width = 150;
+            // 
+            // columnHeader6
+            // 
             columnHeader6.Text = "Duration";
             columnHeader6.Width = 150;
+            // 
+            // columnHeader7
+            // 
             columnHeader7.Text = "Description";
             columnHeader7.Width = 200;
-            
-            // Skills Section
-            //
+            // 
+            // lblSkills
+            // 
             lblSkills.AutoSize = true;
             lblSkills.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblSkills.Location = new Point(20, 620);
@@ -463,8 +538,9 @@
             lblSkills.Size = new Size(50, 21);
             lblSkills.TabIndex = 33;
             lblSkills.Text = "Skills";
-            contentPanel.Controls.Add(lblSkills);
-            
+            // 
+            // lblSkill
+            // 
             lblSkill.AutoSize = true;
             lblSkill.Font = new Font("Segoe UI", 10F);
             lblSkill.Location = new Point(20, 655);
@@ -472,16 +548,18 @@
             lblSkill.Size = new Size(35, 19);
             lblSkill.TabIndex = 34;
             lblSkill.Text = "Skill:";
-            contentPanel.Controls.Add(lblSkill);
-            
+            // 
+            // txtSkill
+            // 
             txtSkill.Font = new Font("Segoe UI", 10F);
             txtSkill.Location = new Point(110, 653);
             txtSkill.Margin = new Padding(3, 2, 3, 2);
             txtSkill.Name = "txtSkill";
             txtSkill.Size = new Size(250, 25);
             txtSkill.TabIndex = 17;
-            contentPanel.Controls.Add(txtSkill);
-            
+            // 
+            // lblProficiency
+            // 
             lblProficiency.AutoSize = true;
             lblProficiency.Font = new Font("Segoe UI", 10F);
             lblProficiency.Location = new Point(370, 655);
@@ -489,8 +567,9 @@
             lblProficiency.Size = new Size(77, 19);
             lblProficiency.TabIndex = 36;
             lblProficiency.Text = "Proficiency:";
-            contentPanel.Controls.Add(lblProficiency);
-            
+            // 
+            // cmbProficiency
+            // 
             cmbProficiency.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbProficiency.Font = new Font("Segoe UI", 10F);
             cmbProficiency.FormattingEnabled = true;
@@ -500,8 +579,9 @@
             cmbProficiency.Name = "cmbProficiency";
             cmbProficiency.Size = new Size(130, 25);
             cmbProficiency.TabIndex = 18;
-            contentPanel.Controls.Add(cmbProficiency);
-            
+            // 
+            // btnAddSkill
+            // 
             btnAddSkill.BackColor = Color.FromArgb(45, 52, 70);
             btnAddSkill.FlatStyle = FlatStyle.Flat;
             btnAddSkill.ForeColor = Color.White;
@@ -513,8 +593,9 @@
             btnAddSkill.Text = "Add";
             btnAddSkill.UseVisualStyleBackColor = false;
             btnAddSkill.Click += btnAddSkill_Click;
-            contentPanel.Controls.Add(btnAddSkill);
-            
+            // 
+            // listViewSkills
+            // 
             listViewSkills.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9 });
             listViewSkills.FullRowSelect = true;
             listViewSkills.GridLines = true;
@@ -526,13 +607,16 @@
             listViewSkills.TabIndex = 20;
             listViewSkills.UseCompatibleStateImageBehavior = false;
             listViewSkills.View = View.Details;
-            contentPanel.Controls.Add(listViewSkills);
-            
+            // 
+            // columnHeader8
+            // 
             columnHeader8.Text = "Skill";
             columnHeader8.Width = 400;
+            // 
+            // columnHeader9
+            // 
             columnHeader9.Text = "Proficiency";
             columnHeader9.Width = 200;
-            
             // 
             // headerPanel
             // 
@@ -542,9 +626,8 @@
             headerPanel.Location = new Point(0, 0);
             headerPanel.Margin = new Padding(3, 2, 3, 2);
             headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(900, 45);
+            headerPanel.Size = new Size(715, 45);
             headerPanel.TabIndex = 1;
-            
             // 
             // lblTitle
             // 
@@ -553,11 +636,10 @@
             lblTitle.ForeColor = Color.White;
             lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(900, 45);
+            lblTitle.Size = new Size(715, 45);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "CV Builder";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
-            
             // 
             // footerPanel
             // 
@@ -567,9 +649,8 @@
             footerPanel.Location = new Point(0, 655);
             footerPanel.Margin = new Padding(3, 2, 3, 2);
             footerPanel.Name = "footerPanel";
-            footerPanel.Size = new Size(900, 45);
+            footerPanel.Size = new Size(715, 45);
             footerPanel.TabIndex = 2;
-            
             // 
             // btnGenerateCV
             // 
@@ -578,7 +659,7 @@
             btnGenerateCV.FlatStyle = FlatStyle.Flat;
             btnGenerateCV.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnGenerateCV.ForeColor = Color.White;
-            btnGenerateCV.Location = new Point(757, 10);
+            btnGenerateCV.Location = new Point(572, 10);
             btnGenerateCV.Margin = new Padding(3, 2, 3, 2);
             btnGenerateCV.Name = "btnGenerateCV";
             btnGenerateCV.Size = new Size(132, 26);
@@ -586,7 +667,6 @@
             btnGenerateCV.Text = "Generate CV";
             btnGenerateCV.UseVisualStyleBackColor = false;
             btnGenerateCV.Click += btnGenerateCV_Click;
-            
             // 
             // btnClear
             // 
@@ -595,7 +675,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI", 10F);
             btnClear.ForeColor = Color.FromArgb(45, 52, 70);
-            btnClear.Location = new Point(620, 10);
+            btnClear.Location = new Point(435, 10);
             btnClear.Margin = new Padding(3, 2, 3, 2);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(132, 26);
@@ -603,15 +683,16 @@
             btnClear.Text = "Clear All";
             btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
-            
             // 
             // Codera
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(900, 700);
+            ClientSize = new Size(715, 700);
             Controls.Add(mainPanel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "Codera";
             Text = "CV Builder";
             Load += Codera_Load;

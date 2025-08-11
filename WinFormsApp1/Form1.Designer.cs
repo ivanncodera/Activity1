@@ -55,7 +55,6 @@
             panelSideMenu.Controls.Add(btnGilles);
             panelSideMenu.Controls.Add(btnNavigateToCodera);
             panelSideMenu.Controls.Add(panelLogo);
-            panelSideMenu.Dock = DockStyle.Left;
             panelSideMenu.Location = new Point(0, 0);
             panelSideMenu.Name = "panelSideMenu";
             panelSideMenu.Size = new Size(220, 450);
