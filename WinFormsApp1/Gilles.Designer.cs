@@ -89,7 +89,7 @@
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.ActiveCaptionText;
+            button1.BackColor = SystemColors.ActiveCaption;
             button1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
             button1.Location = new Point(-7, 0);
@@ -130,7 +130,7 @@
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(367, 127);
             label1.Name = "label1";
-            label1.Size = new Size(121, 21);
+            label1.Size = new Size(97, 18);
             label1.TabIndex = 5;
             label1.Text = "FULL NAME:";
             // 
@@ -139,7 +139,7 @@
             textBox2.Font = new Font("Arial", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox2.Location = new Point(494, 110);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(616, 45);
+            textBox2.Size = new Size(616, 38);
             textBox2.TabIndex = 6;
             // 
             // textBox3
@@ -147,7 +147,7 @@
             textBox3.Font = new Font("Arial", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox3.Location = new Point(494, 161);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(204, 45);
+            textBox3.Size = new Size(204, 38);
             textBox3.TabIndex = 7;
             // 
             // label2
@@ -157,7 +157,7 @@
             label2.ForeColor = SystemColors.ActiveCaptionText;
             label2.Location = new Point(378, 178);
             label2.Name = "label2";
-            label2.Size = new Size(87, 21);
+            label2.Size = new Size(70, 18);
             label2.TabIndex = 8;
             label2.Text = "STATUS:";
             // 
@@ -166,10 +166,10 @@
             button3.BackColor = SystemColors.ButtonHighlight;
             button3.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ActiveCaptionText;
-            button3.Location = new Point(352, 229);
+            button3.Location = new Point(360, 229);
             button3.Margin = new Padding(0, 6, 0, 6);
             button3.Name = "button3";
-            button3.Size = new Size(911, 37);
+            button3.Size = new Size(778, 37);
             button3.TabIndex = 9;
             button3.Text = "ABOUT ME";
             button3.TextAlign = ContentAlignment.MiddleLeft;
@@ -181,7 +181,7 @@
             richTextBox2.Location = new Point(370, 278);
             richTextBox2.Margin = new Padding(0, 6, 0, 6);
             richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(771, 101);
+            richTextBox2.Size = new Size(768, 101);
             richTextBox2.TabIndex = 10;
             richTextBox2.Text = "";
             // 
@@ -190,10 +190,10 @@
             button4.BackColor = SystemColors.ButtonHighlight;
             button4.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = SystemColors.ActiveCaptionText;
-            button4.Location = new Point(351, 411);
+            button4.Location = new Point(351, 414);
             button4.Margin = new Padding(0, 6, 0, 6);
             button4.Name = "button4";
-            button4.Size = new Size(911, 37);
+            button4.Size = new Size(787, 37);
             button4.TabIndex = 11;
             button4.Text = "EDUCATION";
             button4.TextAlign = ContentAlignment.MiddleLeft;
@@ -214,14 +214,15 @@
             button5.BackColor = SystemColors.ButtonHighlight;
             button5.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.ForeColor = SystemColors.ActiveCaptionText;
-            button5.Location = new Point(351, 641);
+            button5.Location = new Point(349, 645);
             button5.Margin = new Padding(0, 6, 0, 6);
             button5.Name = "button5";
-            button5.Size = new Size(911, 37);
+            button5.Size = new Size(789, 37);
             button5.TabIndex = 13;
             button5.Text = "EXPERIENCE";
             button5.TextAlign = ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // richTextBox4
             // 
@@ -238,10 +239,10 @@
             button6.BackColor = SystemColors.ButtonHighlight;
             button6.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button6.ForeColor = SystemColors.ActiveCaptionText;
-            button6.Location = new Point(351, 857);
+            button6.Location = new Point(349, 857);
             button6.Margin = new Padding(0, 6, 0, 6);
             button6.Name = "button6";
-            button6.Size = new Size(911, 37);
+            button6.Size = new Size(789, 37);
             button6.TabIndex = 15;
             button6.Text = "REFERENCES";
             button6.TextAlign = ContentAlignment.MiddleLeft;
@@ -265,7 +266,7 @@
             label3.ForeColor = SystemColors.ActiveCaptionText;
             label3.Location = new Point(43, 319);
             label3.Name = "label3";
-            label3.Size = new Size(97, 21);
+            label3.Size = new Size(81, 18);
             label3.TabIndex = 17;
             label3.Text = "CONTACT";
             label3.Click += label3_Click;
@@ -275,7 +276,7 @@
             textBox1.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(138, 357);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(204, 27);
+            textBox1.Size = new Size(204, 23);
             textBox1.TabIndex = 18;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -287,7 +288,7 @@
             label4.ForeColor = SystemColors.ActiveCaptionText;
             label4.Location = new Point(2, 362);
             label4.Name = "label4";
-            label4.Size = new Size(132, 18);
+            label4.Size = new Size(99, 15);
             label4.TabIndex = 19;
             label4.Text = "CELLPHONE NO.";
             // 
@@ -299,7 +300,7 @@
             label5.ForeColor = SystemColors.ActiveCaptionText;
             label5.Location = new Point(30, 399);
             label5.Name = "label5";
-            label5.Size = new Size(57, 18);
+            label5.Size = new Size(45, 15);
             label5.TabIndex = 20;
             label5.Text = "EMAIL:";
             // 
@@ -308,7 +309,7 @@
             textBox4.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox4.Location = new Point(94, 395);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(248, 27);
+            textBox4.Size = new Size(248, 23);
             textBox4.TabIndex = 21;
             // 
             // label6
@@ -319,7 +320,7 @@
             label6.ForeColor = SystemColors.ActiveCaptionText;
             label6.Location = new Point(5, 436);
             label6.Name = "label6";
-            label6.Size = new Size(84, 18);
+            label6.Size = new Size(65, 15);
             label6.TabIndex = 22;
             label6.Text = "ADDRESS:";
             // 
@@ -328,7 +329,7 @@
             textBox5.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox5.Location = new Point(90, 430);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(248, 27);
+            textBox5.Size = new Size(248, 23);
             textBox5.TabIndex = 23;
             // 
             // label7
@@ -339,7 +340,7 @@
             label7.ForeColor = SystemColors.ActiveCaptionText;
             label7.Location = new Point(43, 535);
             label7.Name = "label7";
-            label7.Size = new Size(74, 21);
+            label7.Size = new Size(61, 18);
             label7.TabIndex = 24;
             label7.Text = "SKILLS";
             label7.Click += label7_Click;
@@ -360,9 +361,9 @@
             button7.BackColor = SystemColors.GradientActiveCaption;
             button7.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button7.ForeColor = SystemColors.ActiveCaptionText;
-            button7.Location = new Point(1030, 1026);
+            button7.Location = new Point(1030, 1013);
             button7.Name = "button7";
-            button7.Size = new Size(94, 29);
+            button7.Size = new Size(108, 42);
             button7.TabIndex = 26;
             button7.Text = "PRINT";
             button7.UseVisualStyleBackColor = false;
@@ -391,7 +392,7 @@
             // 
             // Gilles
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(6F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(1162, 1055);
@@ -424,6 +425,7 @@
             Controls.Add(button6);
             Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = SystemColors.ActiveCaption;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(0, 6, 0, 6);
             Name = "Gilles";
             Text = "Gilles";
