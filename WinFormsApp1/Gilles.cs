@@ -20,7 +20,7 @@ namespace WinFormsApp1
         public Gilles()
         {
             InitializeComponent();
-            
+
             // Initialize the printing components
             SetupPrinting();
         }
@@ -30,7 +30,7 @@ namespace WinFormsApp1
             // Create the PrintDocument
             printDocument = new PrintDocument();
             printDocument.PrintPage += PrintDocument_PrintPage;
-            
+
             // Create the PrintPreviewDialog
             printPreviewDialog = new PrintPreviewDialog
             {
@@ -134,7 +134,7 @@ namespace WinFormsApp1
             SizeF size = graphics.MeasureString(text, font, maxWidth);
             return size.Height + 10; // Add some padding
         }
-        
+
         // Event handlers
         private void button7_Click(object sender, EventArgs e)
         {
@@ -148,7 +148,7 @@ namespace WinFormsApp1
                     {
                         // Show print preview
                         printPreviewDialog.ShowDialog();
-                        
+
                         // Uncomment this and comment the above line if you want to print directly
                         // printDocument.Print();
                     }
@@ -186,7 +186,7 @@ namespace WinFormsApp1
                 }
             }
         }
-        
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             // Implementation if needed
@@ -197,27 +197,32 @@ namespace WinFormsApp1
             // Set up scrollbar
             this.AutoScroll = true;
         }
-        
+
         private void label3_Click(object sender, EventArgs e)
         {
             // Implementation if needed
         }
-        
+
         private void label7_Click(object sender, EventArgs e)
         {
             // Implementation if needed
         }
-        
+
         private void button9_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
         }
-        
+
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             this.AutoScroll = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

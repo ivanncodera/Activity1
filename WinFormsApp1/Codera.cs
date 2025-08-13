@@ -36,19 +36,19 @@ namespace WinFormsApp1
         private void Codera_Load(object sender, EventArgs e)
         {
             cmbProficiency.SelectedIndex = 0;
-            
+
             listViewEducation.Columns[0].Width = 300;
             listViewEducation.Columns[1].Width = 300;
             listViewEducation.Columns[2].Width = 100;
-            
+
             listViewExperience.Columns[0].Width = 150;
             listViewExperience.Columns[1].Width = 150;
             listViewExperience.Columns[2].Width = 150;
-            listViewExperience.Columns[3].Width = 300;
-            
+            listViewExperience.Columns[3].Width = 200;
+
             listViewSkills.Columns[0].Width = 400;
             listViewSkills.Columns[1].Width = 200;
-            
+
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(txtFullName, "Enter your full name (letters only, no numbers)");
             toolTip.SetToolTip(txtEmail, "Enter a valid email address (e.g., name@example.com)");
@@ -69,7 +69,7 @@ namespace WinFormsApp1
             txtInstitution.TextChanged += TxtInstitution_TextChanged;
             txtCompany.TextChanged += TxtCompany_TextChanged;
             txtPosition.TextChanged += TxtPosition_TextChanged;
-            
+
             errorProvider = new ErrorProvider();
             errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
@@ -88,7 +88,7 @@ namespace WinFormsApp1
                 Location = new Point(10, 10),
                 Cursor = Cursors.Hand
             };
-            
+
             btnBack.Click += BtnBack_Click;
             headerPanel.Controls.Add(btnBack);
             btnBack.BringToFront();
@@ -99,17 +99,17 @@ namespace WinFormsApp1
             if (HasUnsavedData())
             {
                 DialogResult result = MessageBox.Show(
-                    "You have unsaved changes. Are you sure you want to go back?", 
-                    "Confirm", 
-                    MessageBoxButtons.YesNo, 
+                    "You have unsaved changes. Are you sure you want to go back?",
+                    "Confirm",
+                    MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
-                    
+
                 if (result == DialogResult.No)
                 {
                     return;
                 }
             }
-            
+
             this.Close();
         }
 
@@ -139,7 +139,7 @@ namespace WinFormsApp1
                         FileInfo fileInfo = new FileInfo(openFileDialog.FileName);
                         if (fileInfo.Length > 2 * 1024 * 1024)
                         {
-                            MessageBox.Show("Image size must be less than 2MB.", "Validation Error", 
+                            MessageBox.Show("Image size must be less than 2MB.", "Validation Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
@@ -149,7 +149,7 @@ namespace WinFormsApp1
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Error loading image: {ex.Message}", "Error", 
+                        MessageBox.Show($"Error loading image: {ex.Message}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -193,7 +193,7 @@ namespace WinFormsApp1
             {
                 throw new Exception("Name must contain only letters, spaces, hyphens, apostrophes, or periods.");
             }
-            
+
             if (!string.IsNullOrWhiteSpace(txtEmail.Text) && !ValidateEmailFormat(txtEmail.Text))
             {
                 throw new Exception("Please enter a valid email address.");
@@ -207,25 +207,25 @@ namespace WinFormsApp1
 
         private void btnAddEducation_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtInstitution.Text) || 
-                string.IsNullOrWhiteSpace(txtDegree.Text) || 
+            if (string.IsNullOrWhiteSpace(txtInstitution.Text) ||
+                string.IsNullOrWhiteSpace(txtDegree.Text) ||
                 string.IsNullOrWhiteSpace(txtGradYear.Text))
             {
-                MessageBox.Show("Please fill in all education fields.", "Validation Error", 
+                MessageBox.Show("Please fill in all education fields.", "Validation Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!ValidateNameFormat(txtInstitution.Text))
             {
-                MessageBox.Show("Institution name must contain only letters, no numbers.", "Validation Error", 
+                MessageBox.Show("Institution name must contain only letters, no numbers.", "Validation Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!ValidateYearFormat(txtGradYear.Text))
             {
-                MessageBox.Show("Please enter a valid graduation year (4 digits).", "Validation Error", 
+                MessageBox.Show("Please enter a valid graduation year (4 digits).", "Validation Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -243,39 +243,39 @@ namespace WinFormsApp1
 
         private void btnAddExperience_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtCompany.Text) || 
-                string.IsNullOrWhiteSpace(txtPosition.Text) || 
+            if (string.IsNullOrWhiteSpace(txtCompany.Text) ||
+                string.IsNullOrWhiteSpace(txtPosition.Text) ||
                 string.IsNullOrWhiteSpace(txtStartDate.Text))
             {
-                MessageBox.Show("Please fill in all required work experience fields.", 
+                MessageBox.Show("Please fill in all required work experience fields.",
                     "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!ValidateNameFormat(txtCompany.Text))
             {
-                MessageBox.Show("Company name must contain only letters, no numbers.", "Validation Error", 
+                MessageBox.Show("Company name must contain only letters, no numbers.", "Validation Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!ValidateNameFormat(txtPosition.Text))
             {
-                MessageBox.Show("Position must contain only letters, no numbers.", "Validation Error", 
+                MessageBox.Show("Position must contain only letters, no numbers.", "Validation Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!ValidateDateFormat(txtStartDate.Text))
             {
-                MessageBox.Show("Please enter start date in MM/YYYY format (e.g., 01/2020).", 
+                MessageBox.Show("Please enter start date in MM/YYYY format (e.g., 01/2020).",
                     "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!string.IsNullOrWhiteSpace(txtEndDate.Text) && !ValidateDateFormat(txtEndDate.Text))
             {
-                MessageBox.Show("Please enter end date in MM/YYYY format (e.g., 01/2022).", 
+                MessageBox.Show("Please enter end date in MM/YYYY format (e.g., 01/2022).",
                     "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -300,7 +300,7 @@ namespace WinFormsApp1
         {
             if (string.IsNullOrWhiteSpace(txtSkill.Text))
             {
-                MessageBox.Show("Please enter a skill.", "Validation Error", 
+                MessageBox.Show("Please enter a skill.", "Validation Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -309,7 +309,7 @@ namespace WinFormsApp1
             {
                 if (item.Text.Equals(txtSkill.Text, StringComparison.OrdinalIgnoreCase))
                 {
-                    MessageBox.Show("This skill has already been added.", "Validation Error", 
+                    MessageBox.Show("This skill has already been added.", "Validation Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
@@ -326,6 +326,7 @@ namespace WinFormsApp1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            // Clear personal information
             txtFullName.Clear();
             txtAddress.Clear();
             txtPhone.Clear();
@@ -333,10 +334,12 @@ namespace WinFormsApp1
             pictureBoxPhoto.Image = null;
             photoPath = string.Empty;
 
+            // Clear all list views
             listViewEducation.Items.Clear();
             listViewExperience.Items.Clear();
             listViewSkills.Items.Clear();
 
+            // Clear all other form fields
             txtInstitution.Clear();
             txtDegree.Clear();
             txtGradYear.Clear();
@@ -348,15 +351,18 @@ namespace WinFormsApp1
             txtSkill.Clear();
             cmbProficiency.SelectedIndex = 0;
 
-            tabControl.SelectedIndex = 0;
+            // Set focus to the first field
             txtFullName.Focus();
+
+            // Scroll the content panel to the top
+            contentPanel.AutoScrollPosition = new Point(0, 0);
         }
 
         private void btnGenerateCV_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtFullName.Text))
             {
-                MessageBox.Show("Please enter at least your full name to generate a CV.", 
+                MessageBox.Show("Please enter at least your full name to generate a CV.",
                     "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -365,7 +371,7 @@ namespace WinFormsApp1
             {
                 ValidatePersonalInfo();
 
-                DialogResult result = MessageBox.Show("Would you like to preview the CV before printing?", 
+                DialogResult result = MessageBox.Show("Would you like to preview the CV before printing?",
                     "Preview CV", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
@@ -380,14 +386,14 @@ namespace WinFormsApp1
                     if (printDialog.ShowDialog() == DialogResult.OK)
                     {
                         printDocument.Print();
-                        MessageBox.Show("CV printed successfully!", "Success", 
+                        MessageBox.Show("CV printed successfully!", "Success",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error generating CV: {ex.Message}", 
+                MessageBox.Show($"Error generating CV: {ex.Message}",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -395,58 +401,58 @@ namespace WinFormsApp1
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
-            
+
             int leftMargin = e.MarginBounds.Left;
             int topMargin = e.MarginBounds.Top;
             int width = e.MarginBounds.Width;
-            
+
             yPos = topMargin;
-            
+
             g.DrawString("CURRICULUM VITAE", titleFont, Brushes.Navy, leftMargin, yPos);
             yPos += 40;
-            
+
             g.DrawLine(new Pen(Color.Gray, 1), leftMargin, yPos, leftMargin + width, yPos);
             yPos += 20;
-            
+
             g.DrawString("PERSONAL INFORMATION", headingFont, Brushes.Navy, leftMargin, yPos);
             yPos += 25;
-            
+
             g.DrawString($"Name: {txtFullName.Text}", normalFont, Brushes.Black, leftMargin, yPos);
             yPos += 20;
-            
+
             if (!string.IsNullOrWhiteSpace(txtAddress.Text))
             {
                 g.DrawString($"Address: {txtAddress.Text}", normalFont, Brushes.Black, leftMargin, yPos);
                 yPos += 20;
             }
-            
+
             if (!string.IsNullOrWhiteSpace(txtPhone.Text))
             {
                 g.DrawString($"Phone: {txtPhone.Text}", normalFont, Brushes.Black, leftMargin, yPos);
                 yPos += 20;
             }
-            
+
             if (!string.IsNullOrWhiteSpace(txtEmail.Text))
             {
                 g.DrawString($"Email: {txtEmail.Text}", normalFont, Brushes.Black, leftMargin, yPos);
                 yPos += 20;
             }
-            
+
             if (pictureBoxPhoto.Image != null)
             {
                 int photoX = leftMargin + width - 100;
                 int photoY = topMargin + 40;
-                
+
                 g.DrawImage(pictureBoxPhoto.Image, new Rectangle(photoX, photoY, 100, 120));
             }
-            
+
             yPos += 20;
-            
+
             if (listViewEducation.Items.Count > 0)
             {
                 g.DrawString("EDUCATION", headingFont, Brushes.Navy, leftMargin, yPos);
                 yPos += 25;
-                
+
                 foreach (ListViewItem item in listViewEducation.Items)
                 {
                     g.DrawString($"{item.SubItems[0].Text}", normalFont, Brushes.Black, leftMargin, yPos);
@@ -454,22 +460,22 @@ namespace WinFormsApp1
                     g.DrawString($"{item.SubItems[1].Text} ({item.SubItems[2].Text})", italicFont, Brushes.Black, leftMargin + 10, yPos);
                     yPos += 25;
                 }
-                
+
                 yPos += 10;
             }
-            
+
             if (listViewExperience.Items.Count > 0)
             {
                 g.DrawString("WORK EXPERIENCE", headingFont, Brushes.Navy, leftMargin, yPos);
                 yPos += 25;
-                
+
                 foreach (ListViewItem item in listViewExperience.Items)
                 {
                     g.DrawString($"{item.SubItems[0].Text} - {item.SubItems[1].Text}", normalFont, Brushes.Black, leftMargin, yPos);
                     yPos += 20;
                     g.DrawString($"{item.SubItems[2].Text}", italicFont, Brushes.Black, leftMargin + 10, yPos);
                     yPos += 20;
-                    
+
                     if (!string.IsNullOrWhiteSpace(item.SubItems[3].Text))
                     {
                         RectangleF rect = new RectangleF(leftMargin + 10, yPos, width - 20, 1000);
@@ -477,25 +483,25 @@ namespace WinFormsApp1
                         g.DrawString(item.SubItems[3].Text, normalFont, Brushes.Black, rect);
                         yPos += (int)size.Height + 5;
                     }
-                    
+
                     yPos += 10;
                 }
-                
+
                 yPos += 10;
             }
-            
+
             if (listViewSkills.Items.Count > 0)
             {
                 g.DrawString("SKILLS", headingFont, Brushes.Navy, leftMargin, yPos);
                 yPos += 25;
-                
+
                 foreach (ListViewItem item in listViewSkills.Items)
                 {
                     g.DrawString($"• {item.SubItems[0].Text} - {item.SubItems[1].Text}", normalFont, Brushes.Black, leftMargin, yPos);
                     yPos += 20;
                 }
             }
-            
+
             int footerY = e.MarginBounds.Bottom - 20;
             g.DrawString($"Generated on {DateTime.Now.ToShortDateString()}", new Font("Arial", 8), Brushes.Gray, leftMargin, footerY);
         }
@@ -506,7 +512,7 @@ namespace WinFormsApp1
             printPreviewDialog.Document = printDocument;
             printPreviewDialog.ShowDialog();
         }
-        
+
         private void TxtFullName_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtFullName.Text) && !ValidateNameFormat(txtFullName.Text))
@@ -530,7 +536,7 @@ namespace WinFormsApp1
                 errorProvider.SetError(txtInstitution, "");
             }
         }
-        
+
         private void TxtCompany_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtCompany.Text) && !ValidateNameFormat(txtCompany.Text))
@@ -542,7 +548,7 @@ namespace WinFormsApp1
                 errorProvider.SetError(txtCompany, "");
             }
         }
-        
+
         private void TxtPosition_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtPosition.Text) && !ValidateNameFormat(txtPosition.Text))

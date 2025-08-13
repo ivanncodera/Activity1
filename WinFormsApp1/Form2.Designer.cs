@@ -48,9 +48,9 @@
             lblTitle.ForeColor = Color.FromArgb(45, 52, 70);
             lblTitle.Location = new Point(28, 24);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(232, 37);
+            lblTitle.Size = new Size(245, 37);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Curriculum Vitae";
+            lblTitle.Text = "CV and Calculator";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             lblTitle.Click += lblTitle_Click;
             // 

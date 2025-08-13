@@ -129,6 +129,12 @@ namespace WinFormsApp1
             new Mongado().Show();
         }
 
+        private void btnCalculator_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            new Calculator().Show();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 form2 = new();
@@ -152,6 +158,11 @@ namespace WinFormsApp1
         #endregion
 
         private void panelContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelLogo_Click(object sender, EventArgs e)
         {
 
         }

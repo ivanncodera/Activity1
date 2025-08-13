@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panelSideMenu = new Panel();
+            btnCalculator = new Button();
             button1 = new Button();
             btnMongado = new Button();
             btnGilles = new Button();
@@ -50,6 +51,7 @@
             // panelSideMenu
             // 
             panelSideMenu.BackColor = Color.FromArgb(45, 52, 70);
+            panelSideMenu.Controls.Add(btnCalculator);
             panelSideMenu.Controls.Add(button1);
             panelSideMenu.Controls.Add(btnMongado);
             panelSideMenu.Controls.Add(btnGilles);
@@ -60,6 +62,22 @@
             panelSideMenu.Name = "panelSideMenu";
             panelSideMenu.Size = new Size(220, 450);
             panelSideMenu.TabIndex = 0;
+            // 
+            // btnCalculator
+            // 
+            btnCalculator.BackColor = Color.FromArgb(45, 52, 70);
+            btnCalculator.Cursor = Cursors.Hand;
+            btnCalculator.Dock = DockStyle.Top;
+            btnCalculator.FlatStyle = FlatStyle.Flat;
+            btnCalculator.Font = new Font("Segoe UI", 11F);
+            btnCalculator.ForeColor = Color.White;
+            btnCalculator.Location = new Point(0, 230);
+            btnCalculator.Name = "btnCalculator";
+            btnCalculator.Size = new Size(220, 50);
+            btnCalculator.TabIndex = 4;
+            btnCalculator.Text = "Calculator";
+            btnCalculator.UseVisualStyleBackColor = false;
+            btnCalculator.Click += btnCalculator_Click;
             // 
             // button1
             // 
@@ -140,8 +158,9 @@
             labelLogo.Name = "labelLogo";
             labelLogo.Size = new Size(220, 80);
             labelLogo.TabIndex = 0;
-            labelLogo.Text = "Activity 1";
+            labelLogo.Text = "Activities";
             labelLogo.TextAlign = ContentAlignment.MiddleCenter;
+            labelLogo.Click += labelLogo_Click;
             // 
             // panelContent
             // 
@@ -224,5 +243,6 @@
         private Button button1;
         private Panel panelHeader;
         private Label labelTitle;
+        private Button btnCalculator;
     }
 }
