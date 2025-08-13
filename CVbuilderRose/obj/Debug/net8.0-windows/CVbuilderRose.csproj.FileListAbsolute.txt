@@ -1,0 +1,17 @@
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\bin\Debug\net8.0-windows\CVbuilderRose.exe
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\bin\Debug\net8.0-windows\CVbuilderRose.deps.json
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\bin\Debug\net8.0-windows\CVbuilderRose.runtimeconfig.json
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\bin\Debug\net8.0-windows\CVbuilderRose.dll
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\bin\Debug\net8.0-windows\CVbuilderRose.pdb
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\CVbuilderRose.PanelMain.resources
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\CVbuilderRose.Properties.Resources.resources
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\CVbuilderRose.csproj.GenerateResource.cache
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\CVbuilderRose.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\CVbuilderRose.AssemblyInfoInputs.cache
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\CVbuilderRose.AssemblyInfo.cs
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\CVbuilderRose.csproj.CoreCompileInputs.cache
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\CVbuilderRose.dll
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\refint\CVbuilderRose.dll
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\CVbuilderRose.pdb
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\CVbuilderRose.genruntimeconfig.cache
+C:\Users\rosel\source\repos\CVbuilderRose\CVbuilderRose\obj\Debug\net8.0-windows\ref\CVbuilderRose.dll
