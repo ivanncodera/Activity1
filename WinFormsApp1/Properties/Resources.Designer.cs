@@ -63,6 +63,36 @@ namespace WinFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Brown_Organic_Milkshake_Menu {
+            get {
+                object obj = ResourceManager.GetObject("Brown Organic Milkshake Menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Brown_Organic_Milkshake_Menu__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Brown Organic Milkshake Menu (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MangoShake {
+            get {
+                object obj = ResourceManager.GetObject("MangoShake", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Screenshot_5_8_2025_75139_accountingandbusinesspartners_com {
             get {
                 object obj = ResourceManager.GetObject("Screenshot_5-8-2025_75139_accountingandbusinesspartners.com", resourceCulture);
