@@ -134,7 +134,7 @@ namespace WinFormsApp1
         {
             Form2 form2 = new();
             form2.Show();
-            Hide();
+            this.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
