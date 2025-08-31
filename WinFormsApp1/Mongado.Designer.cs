@@ -336,7 +336,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(330, 82);
             label2.Name = "label2";
-            label2.Size = new Size(50, 15);
+            label2.Size = new Size(51, 15);
             label2.TabIndex = 19;
             label2.Text = "Job Title";
             // 
@@ -570,7 +570,7 @@
             label7.AutoSize = true;
             label7.Location = new Point(3, 5);
             label7.Name = "label7";
-            label7.Size = new Size(64, 15);
+            label7.Size = new Size(63, 15);
             label7.TabIndex = 29;
             label7.Text = "Experience";
             // 
@@ -658,7 +658,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(526, 357);
+            ClientSize = new Size(526, 763);
             Controls.Add(PanelContainer);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;

@@ -530,7 +530,7 @@
             // columnHeader7
             // 
             columnHeader7.Text = "Description";
-            columnHeader7.Width = 260;
+            columnHeader7.Width = 255;
             // 
             // lblSkills
             // 

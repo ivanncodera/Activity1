@@ -50,6 +50,7 @@
             lblSecondNumber = new Label();
             lblResult = new Label();
             lblDisplay = new Label();
+            btnBackspace = new Button();
             SuspendLayout();
             // 
             // btnClear
@@ -334,12 +335,26 @@
             // 
             lblDisplay.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             lblDisplay.ForeColor = Color.White;
-            lblDisplay.Location = new Point(15, 115);
+            lblDisplay.Location = new Point(15, 124);
             lblDisplay.Name = "lblDisplay";
             lblDisplay.Size = new Size(258, 40);
             lblDisplay.TabIndex = 21;
             lblDisplay.Text = "0";
             lblDisplay.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnBackspace
+            // 
+            btnBackspace.BackColor = Color.FromArgb(255, 87, 87);
+            btnBackspace.FlatAppearance.BorderSize = 0;
+            btnBackspace.FlatStyle = FlatStyle.Flat;
+            btnBackspace.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            btnBackspace.ForeColor = Color.White;
+            btnBackspace.Location = new Point(84, 188);
+            btnBackspace.Name = "btnBackspace";
+            btnBackspace.Size = new Size(60, 60);
+            btnBackspace.TabIndex = 22;
+            btnBackspace.Text = "⌫";
+            btnBackspace.UseVisualStyleBackColor = false;
             // 
             // Calculator
             // 
@@ -347,6 +362,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(289, 525);
+            Controls.Add(btnBackspace);
             Controls.Add(lblDisplay);
             Controls.Add(lblResult);
             Controls.Add(lblSecondNumber);
@@ -402,5 +418,6 @@
         private Label lblSecondNumber;
         private Label lblResult;
         private Label lblDisplay;
+        private Button btnBackspace;
     }
 }

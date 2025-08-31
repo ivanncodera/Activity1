@@ -47,6 +47,7 @@ namespace WinFormsApp1
             // Other buttons
             btnEquals.Click += BtnEquals_Click;
             btnClear.Click += BtnClear_Click;
+            btnBackspace.Click += BtnBackspace_Click;
         }
 
         private void NumberButton_Click(object sender, EventArgs e)
@@ -141,6 +142,30 @@ namespace WinFormsApp1
             secondNumber = 0;
             currentOperation = "";
             isNewCalculation = true;
+        }
+
+        private void BtnBackspace_Click(object sender, EventArgs e)
+        {
+            // Can't backspace if display is already 0 or in error state
+            if (lblDisplay.Text == "0" || lblDisplay.Text == "Error")
+                return;
+            
+            // Remove the last character
+            if (lblDisplay.Text.Length > 1)
+            {
+                lblDisplay.Text = lblDisplay.Text.Substring(0, lblDisplay.Text.Length - 1);
+            }
+            else
+            {
+                // If only one character is left, set to 0
+                lblDisplay.Text = "0";
+            }
+            
+            // Update the appropriate number label
+            if (string.IsNullOrEmpty(currentOperation))
+                lblFirstNumber.Text = lblDisplay.Text;
+            else
+                lblSecondNumber.Text = lblDisplay.Text;
         }
 
         private void Calculator_Load(object sender, EventArgs e)
