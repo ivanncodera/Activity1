@@ -1,104 +1,151 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
     public partial class Calculator : Form
     {
-        private double value = 0;
-        private string operation = "";
-        private bool operationPerformed = false;
+        private double firstNumber = 0;
+        private double secondNumber = 0;
+        private string currentOperation = "";
+        private bool isNewCalculation = true;
 
         public Calculator()
         {
             InitializeComponent();
+            BindButtonEvents();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void BindButtonEvents()
         {
-            // Initialization when the form loads
+            // Number buttons
+            btn0.Click += NumberButton_Click;
+            btn1.Click += NumberButton_Click;
+            btn2.Click += NumberButton_Click;
+            btn3.Click += NumberButton_Click;
+            btn4.Click += NumberButton_Click;
+            btn5.Click += NumberButton_Click;
+            btn6.Click += NumberButton_Click;
+            btn7.Click += NumberButton_Click;
+            btn8.Click += NumberButton_Click;
+            btn9.Click += NumberButton_Click;
+            btnDecimal.Click += NumberButton_Click;
+
+            // Operation buttons
+            btnAdd.Click += OperationButton_Click;
+            btnSubtract.Click += OperationButton_Click;
+            btnMultiply.Click += OperationButton_Click;
+            btnDivide.Click += OperationButton_Click;
+
+            // Other buttons
+            btnEquals.Click += BtnEquals_Click;
+            btnClear.Click += BtnClear_Click;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void NumberButton_Click(object sender, EventArgs e)
         {
-            // Handle text changes in the display
-        }
-
-        private void btn(object sender, EventArgs e)
-        {
-            // Get clicked button
             Button button = (Button)sender;
 
-            // If the textbox is 0 or an operation was just performed, clear it
-            if (textBox1.Text == "0" || operationPerformed)
+            if (isNewCalculation)
             {
-                textBox1.Clear();
-                operationPerformed = false;
+                lblDisplay.Text = "";
+                isNewCalculation = false;
             }
 
-            // If the button is an operator
-            if (button.Text == "+" || button.Text == "-" || button.Text == "*" || button.Text == "/")
-            {
-                // Store the current value and operation
-                value = double.Parse(textBox1.Text);
-                operation = button.Text;
-                operationPerformed = true;
-            }
-            // If the button is a number or decimal point
+            // Handle decimal point
+            if (button.Text == "." && lblDisplay.Text.Contains("."))
+                return;
+
+            // Handle zero at the beginning
+            if (lblDisplay.Text == "0" && button.Text != ".")
+                lblDisplay.Text = button.Text;
             else
+                lblDisplay.Text += button.Text;
+
+            // Update appropriate number label
+            if (string.IsNullOrEmpty(currentOperation))
+                lblFirstNumber.Text = lblDisplay.Text;
+            else
+                lblSecondNumber.Text = lblDisplay.Text;
+        }
+
+        private void OperationButton_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+
+            // If we're in the middle of an operation, calculate result first
+            if (!string.IsNullOrEmpty(currentOperation) && !string.IsNullOrEmpty(lblSecondNumber.Text))
             {
-                // Don't allow multiple decimal points
-                if (button.Text == "." && textBox1.Text.Contains("."))
-                    return;
-                
-                textBox1.Text += button.Text;
+                BtnEquals_Click(sender, e);
             }
+
+            firstNumber = double.Parse(lblDisplay.Text);
+            currentOperation = button.Text;
+            lblOperation.Text = currentOperation;
+            isNewCalculation = true;
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void BtnEquals_Click(object sender, EventArgs e)
         {
-            // Clear button
-            textBox1.Text = "0";
-            value = 0;
-            operation = "";
-        }
+            if (string.IsNullOrEmpty(currentOperation))
+                return;
 
-        private void button17_Click(object sender, EventArgs e)
-        {
-            // Equals button
-            switch (operation)
+            secondNumber = double.Parse(lblDisplay.Text);
+            double result = 0;
+
+            switch (currentOperation)
             {
                 case "+":
-                    textBox1.Text = (value + double.Parse(textBox1.Text)).ToString();
+                    result = firstNumber + secondNumber;
                     break;
                 case "-":
-                    textBox1.Text = (value - double.Parse(textBox1.Text)).ToString();
+                    result = firstNumber - secondNumber;
                     break;
-                case "*":
-                    textBox1.Text = (value * double.Parse(textBox1.Text)).ToString();
+                case "×":
+                    result = firstNumber * secondNumber;
                     break;
-                case "/":
-                    // Check for division by zero
-                    if (double.Parse(textBox1.Text) != 0)
+                case "÷":
+                    if (secondNumber == 0)
                     {
-                        textBox1.Text = (value / double.Parse(textBox1.Text)).ToString();
+                        lblDisplay.Text = "Error";
+                        lblResult.Text = "Cannot divide by zero";
+                        return;
                     }
-                    else
-                    {
-                        textBox1.Text = "Error";
-                    }
-                    break;
-                default:
+                    result = firstNumber / secondNumber;
                     break;
             }
-            value = double.Parse(textBox1.Text);
-            operation = "";
+
+            lblResult.Text = result.ToString();
+            lblDisplay.Text = result.ToString();
+
+            // Reset for next calculation
+            firstNumber = result;
+            isNewCalculation = true;
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void BtnClear_Click(object sender, EventArgs e)
         {
-            // Close button
-            this.Close();
+            lblFirstNumber.Text = "";
+            lblOperation.Text = "";
+            lblSecondNumber.Text = "";
+            lblResult.Text = "";
+            lblDisplay.Text = "0";
+            firstNumber = 0;
+            secondNumber = 0;
+            currentOperation = "";
+            isNewCalculation = true;
+        }
+
+        private void Calculator_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

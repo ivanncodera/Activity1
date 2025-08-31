@@ -93,9 +93,9 @@
             label1.ForeColor = Color.FromArgb(45, 52, 70);
             label1.Location = new Point(28, 61);
             label1.Name = "label1";
-            label1.Size = new Size(140, 37);
+            label1.Size = new Size(117, 37);
             label1.TabIndex = 3;
-            label1.Text = "Activity 1";
+            label1.Text = "Activity";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Click += label1_Click_1;
             // 
@@ -161,6 +161,7 @@
             Controls.Add(lblMembers);
             Controls.Add(lblTitle);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Welcome";

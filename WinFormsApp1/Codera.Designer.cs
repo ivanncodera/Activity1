@@ -80,6 +80,7 @@
             columnHeader8 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             headerPanel = new Panel();
+            btnBack = new Button();
             lblTitle = new Label();
             footerPanel = new Panel();
             btnGenerateCV = new Button();
@@ -100,7 +101,7 @@
             mainPanel.Location = new Point(0, 0);
             mainPanel.Margin = new Padding(3, 2, 3, 2);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(715, 700);
+            mainPanel.Size = new Size(746, 880);
             mainPanel.TabIndex = 0;
             // 
             // contentPanel
@@ -151,8 +152,9 @@
             contentPanel.Margin = new Padding(3, 2, 3, 2);
             contentPanel.Name = "contentPanel";
             contentPanel.Padding = new Padding(20);
-            contentPanel.Size = new Size(715, 610);
+            contentPanel.Size = new Size(746, 790);
             contentPanel.TabIndex = 0;
+            contentPanel.Paint += contentPanel_Paint;
             // 
             // lblPersonalInfo
             // 
@@ -244,10 +246,10 @@
             // 
             pictureBoxPhoto.BackColor = Color.WhiteSmoke;
             pictureBoxPhoto.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxPhoto.Location = new Point(562, 51);
+            pictureBoxPhoto.Location = new Point(603, 51);
             pictureBoxPhoto.Margin = new Padding(3, 2, 3, 2);
             pictureBoxPhoto.Name = "pictureBoxPhoto";
-            pictureBoxPhoto.Size = new Size(105, 113);
+            pictureBoxPhoto.Size = new Size(120, 113);
             pictureBoxPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxPhoto.TabIndex = 9;
             pictureBoxPhoto.TabStop = false;
@@ -256,11 +258,12 @@
             // 
             btnUploadPhoto.BackColor = Color.FromArgb(45, 52, 70);
             btnUploadPhoto.FlatStyle = FlatStyle.Flat;
+            btnUploadPhoto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUploadPhoto.ForeColor = Color.White;
-            btnUploadPhoto.Location = new Point(562, 180);
+            btnUploadPhoto.Location = new Point(603, 184);
             btnUploadPhoto.Margin = new Padding(3, 2, 3, 2);
             btnUploadPhoto.Name = "btnUploadPhoto";
-            btnUploadPhoto.Size = new Size(105, 26);
+            btnUploadPhoto.Size = new Size(120, 26);
             btnUploadPhoto.TabIndex = 4;
             btnUploadPhoto.Text = "Upload Photo";
             btnUploadPhoto.UseVisualStyleBackColor = false;
@@ -311,7 +314,7 @@
             txtDegree.Location = new Point(430, 243);
             txtDegree.Margin = new Padding(3, 2, 3, 2);
             txtDegree.Name = "txtDegree";
-            txtDegree.Size = new Size(250, 25);
+            txtDegree.Size = new Size(293, 25);
             txtDegree.TabIndex = 6;
             // 
             // lblGradYear
@@ -356,7 +359,7 @@
             listViewEducation.Margin = new Padding(3, 2, 3, 2);
             listViewEducation.MultiSelect = false;
             listViewEducation.Name = "listViewEducation";
-            listViewEducation.Size = new Size(660, 80);
+            listViewEducation.Size = new Size(707, 80);
             listViewEducation.TabIndex = 9;
             listViewEducation.UseCompatibleStateImageBehavior = false;
             listViewEducation.View = View.Details;
@@ -421,7 +424,7 @@
             txtPosition.Location = new Point(350, 433);
             txtPosition.Margin = new Padding(3, 2, 3, 2);
             txtPosition.Name = "txtPosition";
-            txtPosition.Size = new Size(330, 25);
+            txtPosition.Size = new Size(377, 25);
             txtPosition.TabIndex = 11;
             // 
             // lblStartDate
@@ -475,10 +478,10 @@
             // txtJobDescription
             // 
             txtJobDescription.Font = new Font("Segoe UI", 10F);
-            txtJobDescription.Location = new Point(110, 493);
+            txtJobDescription.Location = new Point(110, 495);
             txtJobDescription.Margin = new Padding(3, 2, 3, 2);
             txtJobDescription.Name = "txtJobDescription";
-            txtJobDescription.Size = new Size(470, 25);
+            txtJobDescription.Size = new Size(521, 25);
             txtJobDescription.TabIndex = 14;
             // 
             // btnAddExperience
@@ -486,7 +489,7 @@
             btnAddExperience.BackColor = Color.FromArgb(45, 52, 70);
             btnAddExperience.FlatStyle = FlatStyle.Flat;
             btnAddExperience.ForeColor = Color.White;
-            btnAddExperience.Location = new Point(590, 493);
+            btnAddExperience.Location = new Point(637, 495);
             btnAddExperience.Margin = new Padding(3, 2, 3, 2);
             btnAddExperience.Name = "btnAddExperience";
             btnAddExperience.Size = new Size(90, 25);
@@ -504,7 +507,7 @@
             listViewExperience.Margin = new Padding(3, 2, 3, 2);
             listViewExperience.MultiSelect = false;
             listViewExperience.Name = "listViewExperience";
-            listViewExperience.Size = new Size(660, 80);
+            listViewExperience.Size = new Size(707, 80);
             listViewExperience.TabIndex = 16;
             listViewExperience.UseCompatibleStateImageBehavior = false;
             listViewExperience.View = View.Details;
@@ -527,7 +530,7 @@
             // columnHeader7
             // 
             columnHeader7.Text = "Description";
-            columnHeader7.Width = 200;
+            columnHeader7.Width = 260;
             // 
             // lblSkills
             // 
@@ -577,7 +580,7 @@
             cmbProficiency.Location = new Point(450, 653);
             cmbProficiency.Margin = new Padding(3, 2, 3, 2);
             cmbProficiency.Name = "cmbProficiency";
-            cmbProficiency.Size = new Size(130, 25);
+            cmbProficiency.Size = new Size(181, 25);
             cmbProficiency.TabIndex = 18;
             // 
             // btnAddSkill
@@ -585,7 +588,7 @@
             btnAddSkill.BackColor = Color.FromArgb(45, 52, 70);
             btnAddSkill.FlatStyle = FlatStyle.Flat;
             btnAddSkill.ForeColor = Color.White;
-            btnAddSkill.Location = new Point(590, 653);
+            btnAddSkill.Location = new Point(637, 652);
             btnAddSkill.Margin = new Padding(3, 2, 3, 2);
             btnAddSkill.Name = "btnAddSkill";
             btnAddSkill.Size = new Size(90, 25);
@@ -603,7 +606,7 @@
             listViewSkills.Margin = new Padding(3, 2, 3, 2);
             listViewSkills.MultiSelect = false;
             listViewSkills.Name = "listViewSkills";
-            listViewSkills.Size = new Size(660, 80);
+            listViewSkills.Size = new Size(707, 80);
             listViewSkills.TabIndex = 20;
             listViewSkills.UseCompatibleStateImageBehavior = false;
             listViewSkills.View = View.Details;
@@ -616,29 +619,46 @@
             // columnHeader9
             // 
             columnHeader9.Text = "Proficiency";
-            columnHeader9.Width = 200;
+            columnHeader9.Width = 310;
             // 
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(45, 52, 70);
+            headerPanel.Controls.Add(btnBack);
             headerPanel.Controls.Add(lblTitle);
             headerPanel.Dock = DockStyle.Top;
             headerPanel.Location = new Point(0, 0);
             headerPanel.Margin = new Padding(3, 2, 3, 2);
             headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(715, 45);
+            headerPanel.Size = new Size(746, 45);
             headerPanel.TabIndex = 1;
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = Color.FromArgb(45, 52, 70);
+            btnBack.Cursor = Cursors.Hand;
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Segoe UI", 10F);
+            btnBack.ForeColor = Color.White;
+            btnBack.Location = new Point(11, 8);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(80, 30);
+            btnBack.TabIndex = 1;
+            btnBack.Text = "← Back";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += BtnBack_Click;
             // 
             // lblTitle
             // 
             lblTitle.Dock = DockStyle.Fill;
-            lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblTitle.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.White;
             lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(715, 45);
+            lblTitle.Size = new Size(746, 45);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "CV Builder";
+            lblTitle.Text = "CV BUILDER";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // footerPanel
@@ -646,10 +666,10 @@
             footerPanel.Controls.Add(btnGenerateCV);
             footerPanel.Controls.Add(btnClear);
             footerPanel.Dock = DockStyle.Bottom;
-            footerPanel.Location = new Point(0, 655);
+            footerPanel.Location = new Point(0, 835);
             footerPanel.Margin = new Padding(3, 2, 3, 2);
             footerPanel.Name = "footerPanel";
-            footerPanel.Size = new Size(715, 45);
+            footerPanel.Size = new Size(746, 45);
             footerPanel.TabIndex = 2;
             // 
             // btnGenerateCV
@@ -659,7 +679,7 @@
             btnGenerateCV.FlatStyle = FlatStyle.Flat;
             btnGenerateCV.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnGenerateCV.ForeColor = Color.White;
-            btnGenerateCV.Location = new Point(572, 10);
+            btnGenerateCV.Location = new Point(603, 10);
             btnGenerateCV.Margin = new Padding(3, 2, 3, 2);
             btnGenerateCV.Name = "btnGenerateCV";
             btnGenerateCV.Size = new Size(132, 26);
@@ -675,7 +695,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI", 10F);
             btnClear.ForeColor = Color.FromArgb(45, 52, 70);
-            btnClear.Location = new Point(435, 10);
+            btnClear.Location = new Point(466, 10);
             btnClear.Margin = new Padding(3, 2, 3, 2);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(132, 26);
@@ -688,7 +708,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(715, 700);
+            ClientSize = new Size(746, 880);
             Controls.Add(mainPanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
@@ -714,6 +734,7 @@
         private Panel footerPanel;
         private Button btnGenerateCV;
         private Button btnClear;
+        private Button btnBack;
 
         // Personal Info
         private Label lblPersonalInfo;
