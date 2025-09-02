@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
@@ -17,6 +11,14 @@ namespace WinFormsApp1
         private string currentOperation = "";
         private bool isNewCalculation = true;
 
+        private readonly Dictionary<string, Func<double, double, double>> operations = new()
+        {
+            { "+", (x, y) => x + y },
+            { "-", (x, y) => x - y },
+            { "×", (x, y) => x * y },
+            { "÷", (x, y) => x / y }
+        };
+
         public Calculator()
         {
             InitializeComponent();
@@ -25,26 +27,12 @@ namespace WinFormsApp1
 
         private void BindButtonEvents()
         {
-            // Number buttons
-            btn0.Click += NumberButton_Click;
-            btn1.Click += NumberButton_Click;
-            btn2.Click += NumberButton_Click;
-            btn3.Click += NumberButton_Click;
-            btn4.Click += NumberButton_Click;
-            btn5.Click += NumberButton_Click;
-            btn6.Click += NumberButton_Click;
-            btn7.Click += NumberButton_Click;
-            btn8.Click += NumberButton_Click;
-            btn9.Click += NumberButton_Click;
-            btnDecimal.Click += NumberButton_Click;
-
-            // Operation buttons
-            btnAdd.Click += OperationButton_Click;
-            btnSubtract.Click += OperationButton_Click;
-            btnMultiply.Click += OperationButton_Click;
-            btnDivide.Click += OperationButton_Click;
-
-            // Other buttons
+            Button[] numberButtons = { btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnDecimal };
+            foreach (var btn in numberButtons)
+                btn.Click += NumberButton_Click;
+            Button[] operationButtons = { btnAdd, btnSubtract, btnMultiply, btnDivide };
+            foreach (var btn in operationButtons)
+                btn.Click += OperationButton_Click;
             btnEquals.Click += BtnEquals_Click;
             btnClear.Click += BtnClear_Click;
             btnBackspace.Click += BtnBackspace_Click;
@@ -52,25 +40,17 @@ namespace WinFormsApp1
 
         private void NumberButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
+            if (sender is not Button button) return;
             if (isNewCalculation)
             {
                 lblDisplay.Text = "";
                 isNewCalculation = false;
             }
-
-            // Handle decimal point
-            if (button.Text == "." && lblDisplay.Text.Contains("."))
+            if (button.Text == "." && lblDisplay.Text.Contains('.'))
                 return;
-
-            // Handle zero at the beginning
-            if (lblDisplay.Text == "0" && button.Text != ".")
-                lblDisplay.Text = button.Text;
-            else
-                lblDisplay.Text += button.Text;
-
-            // Update appropriate number label
+            lblDisplay.Text = lblDisplay.Text == "0" && button.Text != "." 
+                ? button.Text 
+                : lblDisplay.Text + button.Text;
             if (string.IsNullOrEmpty(currentOperation))
                 lblFirstNumber.Text = lblDisplay.Text;
             else
@@ -79,56 +59,56 @@ namespace WinFormsApp1
 
         private void OperationButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            // If we're in the middle of an operation, calculate result first
+            if (sender is not Button button) return;
             if (!string.IsNullOrEmpty(currentOperation) && !string.IsNullOrEmpty(lblSecondNumber.Text))
-            {
                 BtnEquals_Click(sender, e);
+            if (lblDisplay.Text == "Error")
+                return;
+            if (double.TryParse(lblDisplay.Text, out double value))
+            {
+                firstNumber = value;
+                currentOperation = button.Text;
+                lblOperation.Text = currentOperation;
+                isNewCalculation = true;
             }
-
-            firstNumber = double.Parse(lblDisplay.Text);
-            currentOperation = button.Text;
-            lblOperation.Text = currentOperation;
-            isNewCalculation = true;
+            else
+                DisplayError("Invalid number");
         }
 
         private void BtnEquals_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(currentOperation))
+            if (string.IsNullOrEmpty(currentOperation) || lblDisplay.Text == "Error")
                 return;
-
-            secondNumber = double.Parse(lblDisplay.Text);
-            double result = 0;
-
-            switch (currentOperation)
+            if (!double.TryParse(lblDisplay.Text, out double value))
             {
-                case "+":
-                    result = firstNumber + secondNumber;
-                    break;
-                case "-":
-                    result = firstNumber - secondNumber;
-                    break;
-                case "×":
-                    result = firstNumber * secondNumber;
-                    break;
-                case "÷":
-                    if (secondNumber == 0)
-                    {
-                        lblDisplay.Text = "Error";
-                        lblResult.Text = "Cannot divide by zero";
-                        return;
-                    }
-                    result = firstNumber / secondNumber;
-                    break;
+                DisplayError("Invalid number");
+                return;
             }
+            
+            secondNumber = value;
 
-            lblResult.Text = result.ToString();
-            lblDisplay.Text = result.ToString();
-
-            // Reset for next calculation
-            firstNumber = result;
-            isNewCalculation = true;
+            try
+            {
+                if (currentOperation == "÷" && secondNumber == 0)
+                {
+                    DisplayError("Cannot divide by zero");
+                    return;
+                }
+                double result = operations[currentOperation](firstNumber, secondNumber);
+                if (double.IsInfinity(result) || double.IsNaN(result))
+                {
+                    DisplayError("Result out of range");
+                    return;
+                }
+                lblResult.Text = result.ToString();
+                lblDisplay.Text = result.ToString();
+                firstNumber = result;
+                isNewCalculation = true;
+            }
+            catch
+            {
+                DisplayError("Calculation error");
+            }
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -146,26 +126,27 @@ namespace WinFormsApp1
 
         private void BtnBackspace_Click(object sender, EventArgs e)
         {
-            // Can't backspace if display is already 0 or in error state
-            if (lblDisplay.Text == "0" || lblDisplay.Text == "Error")
+            if (lblDisplay.Text == "0" || lblDisplay.Text == "Error" || isNewCalculation)
                 return;
-            
-            // Remove the last character
-            if (lblDisplay.Text.Length > 1)
+            lblDisplay.Text = lblDisplay.Text.Length switch
             {
-                lblDisplay.Text = lblDisplay.Text.Substring(0, lblDisplay.Text.Length - 1);
-            }
-            else
-            {
-                // If only one character is left, set to 0
-                lblDisplay.Text = "0";
-            }
-            
-            // Update the appropriate number label
+                1 => "0",
+                2 when lblDisplay.Text[0] == '-' => "0",
+                _ => lblDisplay.Text[..^1]
+            };
             if (string.IsNullOrEmpty(currentOperation))
                 lblFirstNumber.Text = lblDisplay.Text;
             else
                 lblSecondNumber.Text = lblDisplay.Text;
+
+            if (lblDisplay.Text is "." or "-" or "-.")
+                lblDisplay.Text = "0";
+        }
+
+        private void DisplayError(string message)
+        {
+            lblDisplay.Text = "Error";
+            lblResult.Text = message;
         }
 
         private void Calculator_Load(object sender, EventArgs e)

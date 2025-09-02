@@ -220,6 +220,8 @@
             Controls.Add(panelContent);
             Controls.Add(panelSideMenu);
             Font = new Font("Segoe UI", 9F);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Activity 1";
             panelSideMenu.ResumeLayout(false);

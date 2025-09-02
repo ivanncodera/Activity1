@@ -162,6 +162,7 @@
             Controls.Add(lblTitle);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Welcome";

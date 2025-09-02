@@ -55,7 +55,7 @@
             // 
             // btnClear
             // 
-            btnClear.BackColor = Color.FromArgb(255, 87, 87);
+            btnClear.BackColor = Color.FromArgb(255, 105, 180);
             btnClear.FlatAppearance.BorderSize = 0;
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -69,7 +69,7 @@
             // 
             // btnDivide
             // 
-            btnDivide.BackColor = Color.FromArgb(255, 149, 0);
+            btnDivide.BackColor = Color.FromArgb(219, 112, 147);
             btnDivide.FlatAppearance.BorderSize = 0;
             btnDivide.FlatStyle = FlatStyle.Flat;
             btnDivide.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -83,7 +83,7 @@
             // 
             // btnMultiply
             // 
-            btnMultiply.BackColor = Color.FromArgb(255, 149, 0);
+            btnMultiply.BackColor = Color.FromArgb(219, 112, 147);
             btnMultiply.FlatAppearance.BorderSize = 0;
             btnMultiply.FlatStyle = FlatStyle.Flat;
             btnMultiply.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -97,7 +97,7 @@
             // 
             // btnSubtract
             // 
-            btnSubtract.BackColor = Color.FromArgb(255, 149, 0);
+            btnSubtract.BackColor = Color.FromArgb(219, 112, 147);
             btnSubtract.FlatAppearance.BorderSize = 0;
             btnSubtract.FlatStyle = FlatStyle.Flat;
             btnSubtract.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -111,7 +111,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.BackColor = Color.FromArgb(255, 149, 0);
+            btnAdd.BackColor = Color.FromArgb(219, 112, 147);
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -125,7 +125,7 @@
             // 
             // btnEquals
             // 
-            btnEquals.BackColor = Color.FromArgb(255, 149, 0);
+            btnEquals.BackColor = Color.FromArgb(219, 112, 147);
             btnEquals.FlatAppearance.BorderSize = 0;
             btnEquals.FlatStyle = FlatStyle.Flat;
             btnEquals.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -139,7 +139,7 @@
             // 
             // btnDecimal
             // 
-            btnDecimal.BackColor = Color.FromArgb(50, 50, 50);
+            btnDecimal.BackColor = Color.FromArgb(255, 182, 193);
             btnDecimal.FlatAppearance.BorderSize = 0;
             btnDecimal.FlatStyle = FlatStyle.Flat;
             btnDecimal.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -153,7 +153,7 @@
             // 
             // btn0
             // 
-            btn0.BackColor = Color.FromArgb(50, 50, 50);
+            btn0.BackColor = Color.FromArgb(255, 182, 193);
             btn0.FlatAppearance.BorderSize = 0;
             btn0.FlatStyle = FlatStyle.Flat;
             btn0.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -167,7 +167,7 @@
             // 
             // btn9
             // 
-            btn9.BackColor = Color.FromArgb(50, 50, 50);
+            btn9.BackColor = Color.FromArgb(255, 182, 193);
             btn9.FlatAppearance.BorderSize = 0;
             btn9.FlatStyle = FlatStyle.Flat;
             btn9.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -181,7 +181,7 @@
             // 
             // btn8
             // 
-            btn8.BackColor = Color.FromArgb(50, 50, 50);
+            btn8.BackColor = Color.FromArgb(255, 182, 193);
             btn8.FlatAppearance.BorderSize = 0;
             btn8.FlatStyle = FlatStyle.Flat;
             btn8.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -195,7 +195,7 @@
             // 
             // btn7
             // 
-            btn7.BackColor = Color.FromArgb(50, 50, 50);
+            btn7.BackColor = Color.FromArgb(255, 182, 193);
             btn7.FlatAppearance.BorderSize = 0;
             btn7.FlatStyle = FlatStyle.Flat;
             btn7.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -209,7 +209,7 @@
             // 
             // btn6
             // 
-            btn6.BackColor = Color.FromArgb(50, 50, 50);
+            btn6.BackColor = Color.FromArgb(255, 182, 193);
             btn6.FlatAppearance.BorderSize = 0;
             btn6.FlatStyle = FlatStyle.Flat;
             btn6.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -223,7 +223,7 @@
             // 
             // btn5
             // 
-            btn5.BackColor = Color.FromArgb(50, 50, 50);
+            btn5.BackColor = Color.FromArgb(255, 182, 193);
             btn5.FlatAppearance.BorderSize = 0;
             btn5.FlatStyle = FlatStyle.Flat;
             btn5.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -237,7 +237,7 @@
             // 
             // btn4
             // 
-            btn4.BackColor = Color.FromArgb(50, 50, 50);
+            btn4.BackColor = Color.FromArgb(255, 182, 193);
             btn4.FlatAppearance.BorderSize = 0;
             btn4.FlatStyle = FlatStyle.Flat;
             btn4.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -251,7 +251,7 @@
             // 
             // btn3
             // 
-            btn3.BackColor = Color.FromArgb(50, 50, 50);
+            btn3.BackColor = Color.FromArgb(255, 182, 193);
             btn3.FlatAppearance.BorderSize = 0;
             btn3.FlatStyle = FlatStyle.Flat;
             btn3.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -265,7 +265,7 @@
             // 
             // btn2
             // 
-            btn2.BackColor = Color.FromArgb(50, 50, 50);
+            btn2.BackColor = Color.FromArgb(255, 182, 193);
             btn2.FlatAppearance.BorderSize = 0;
             btn2.FlatStyle = FlatStyle.Flat;
             btn2.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -279,7 +279,7 @@
             // 
             // btn1
             // 
-            btn1.BackColor = Color.FromArgb(50, 50, 50);
+            btn1.BackColor = Color.FromArgb(255, 182, 193);
             btn1.FlatAppearance.BorderSize = 0;
             btn1.FlatStyle = FlatStyle.Flat;
             btn1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -294,7 +294,7 @@
             // lblFirstNumber
             // 
             lblFirstNumber.Font = new Font("Segoe UI", 12F);
-            lblFirstNumber.ForeColor = Color.LightGray;
+            lblFirstNumber.ForeColor = Color.Black;
             lblFirstNumber.Location = new Point(15, 15);
             lblFirstNumber.Name = "lblFirstNumber";
             lblFirstNumber.Size = new Size(258, 25);
@@ -304,7 +304,7 @@
             // lblOperation
             // 
             lblOperation.Font = new Font("Segoe UI", 12F);
-            lblOperation.ForeColor = Color.LightGray;
+            lblOperation.ForeColor = Color.Black;
             lblOperation.Location = new Point(15, 40);
             lblOperation.Name = "lblOperation";
             lblOperation.Size = new Size(258, 25);
@@ -314,7 +314,7 @@
             // lblSecondNumber
             // 
             lblSecondNumber.Font = new Font("Segoe UI", 12F);
-            lblSecondNumber.ForeColor = Color.LightGray;
+            lblSecondNumber.ForeColor = Color.Black;
             lblSecondNumber.Location = new Point(15, 65);
             lblSecondNumber.Name = "lblSecondNumber";
             lblSecondNumber.Size = new Size(258, 25);
@@ -324,7 +324,7 @@
             // lblResult
             // 
             lblResult.Font = new Font("Segoe UI", 12F);
-            lblResult.ForeColor = Color.LightGray;
+            lblResult.ForeColor = Color.Black;
             lblResult.Location = new Point(15, 90);
             lblResult.Name = "lblResult";
             lblResult.Size = new Size(258, 25);
@@ -334,7 +334,7 @@
             // lblDisplay
             // 
             lblDisplay.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
-            lblDisplay.ForeColor = Color.White;
+            lblDisplay.ForeColor = Color.Black;
             lblDisplay.Location = new Point(15, 124);
             lblDisplay.Name = "lblDisplay";
             lblDisplay.Size = new Size(258, 40);
@@ -344,7 +344,7 @@
             // 
             // btnBackspace
             // 
-            btnBackspace.BackColor = Color.FromArgb(255, 87, 87);
+            btnBackspace.BackColor = Color.FromArgb(255, 105, 180);
             btnBackspace.FlatAppearance.BorderSize = 0;
             btnBackspace.FlatStyle = FlatStyle.Flat;
             btnBackspace.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
@@ -360,7 +360,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
+            BackColor = Color.FromArgb(255, 192, 203);
             ClientSize = new Size(289, 525);
             Controls.Add(btnBackspace);
             Controls.Add(lblDisplay);

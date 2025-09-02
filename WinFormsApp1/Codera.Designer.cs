@@ -464,6 +464,7 @@
             txtEndDate.Name = "txtEndDate";
             txtEndDate.Size = new Size(132, 25);
             txtEndDate.TabIndex = 13;
+            txtEndDate.TextChanged += txtEndDate_TextChanged_1;
             // 
             // lblJobDescription
             // 
@@ -525,7 +526,7 @@
             // columnHeader6
             // 
             columnHeader6.Text = "Duration";
-            columnHeader6.Width = 150;
+            columnHeader6.Width = 170;
             // 
             // columnHeader7
             // 
