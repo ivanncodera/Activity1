@@ -1,4 +1,7 @@
-﻿namespace WinFormsApp1
+﻿using System.Windows.Forms;
+using System.Drawing;
+
+namespace WinFormsApp1
 {
     partial class Gilles
     {
@@ -34,7 +37,7 @@
         private RichTextBox richTextBox6;
         private Button button7;
         private Button button9;
-        private VScrollBar vScrollBar1;
+        private ErrorProvider errorProvider;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -42,9 +45,29 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+                
+                // Clean up the printing components
+                if (printDocument != null)
+                {
+                    printDocument.Dispose();
+                }
+                
+                if (printPreviewDialog != null)
+                {
+                    printPreviewDialog.Dispose();
+                }
+                
+                // Dispose error provider
+                if (errorProvider != null)
+                {
+                    errorProvider.Dispose();
+                }
             }
             base.Dispose(disposing);
         }
@@ -57,6 +80,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            errorProvider = new ErrorProvider(components);
             button1 = new Button();
             pictureBox1 = new PictureBox();
             button2 = new Button();
@@ -83,9 +108,13 @@
             richTextBox6 = new RichTextBox();
             button7 = new Button();
             button9 = new Button();
-            vScrollBar1 = new VScrollBar();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
             // 
             // button1
             // 
@@ -365,7 +394,7 @@
             button7.Name = "button7";
             button7.Size = new Size(108, 42);
             button7.TabIndex = 26;
-            button7.Text = "PRINT";
+            button7.Text = "VIEW & PRINT";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
@@ -382,20 +411,12 @@
             button9.UseVisualStyleBackColor = false;
             button9.Click += button9_Click;
             // 
-            // vScrollBar1
-            // 
-            vScrollBar1.Location = new Point(1149, 39);
-            vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(19, 1074);
-            vScrollBar1.TabIndex = 29;
-            vScrollBar1.Scroll += vScrollBar1_Scroll;
-            // 
             // Gilles
             // 
             AutoScaleDimensions = new SizeF(6F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(1162, 1055);
+            ClientSize = new Size(1165, 1075);
             Controls.Add(richTextBox5);
             Controls.Add(button9);
             Controls.Add(button7);
@@ -418,7 +439,6 @@
             Controls.Add(button2);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
-            Controls.Add(vScrollBar1);
             Controls.Add(button3);
             Controls.Add(button4);
             Controls.Add(button5);
@@ -430,6 +450,7 @@
             Name = "Gilles";
             Text = "Gilles";
             Load += Gilles_Load;
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

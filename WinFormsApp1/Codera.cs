@@ -914,7 +914,7 @@ namespace WinFormsApp1
             int rightColumnStart = leftMargin + columnWidth + 20;
             int originalYPos = yPos;
             int itemCount = listViewSkills.Items.Count;
-            int leftColumnItems = (itemCount + 1) / 2; // Split items evenly
+            int leftColumnItems = (itemCount + 1) / 2; 
 
             // Print left column
             for (int i = 0; i < leftColumnItems && i < itemCount; i++)
@@ -1130,22 +1130,18 @@ namespace WinFormsApp1
 
         private void DrawSectionHeader(Graphics g, string title, int leftMargin, int width)
         {
-            // Draw section title
             g.DrawString(title, headingFont, Brushes.DarkBlue, leftMargin, yPos);
             yPos += 25;
 
-            // Draw separator line
             g.DrawLine(new Pen(Color.LightGray, 1), leftMargin, yPos - 5, leftMargin + width - 150, yPos - 5);
         }
 
-        // Create a generic method for adding items to lists
         private void AddItemToList<T>(T item, ListView listView, Action clearFields) where T : ListViewItem
         {
             listView.Items.Add(item);
             clearFields();
         }
 
-        // Modify the FormatDateForDisplay method to show month names instead of numbers
         private string FormatDateForDisplay(string mmyyyyDate)
         {
             if (mmyyyyDate.Equals("Present", StringComparison.OrdinalIgnoreCase))
@@ -1161,11 +1157,10 @@ namespace WinFormsApp1
             }
             catch
             {
-                return mmyyyyDate; // Return original if parsing fails
+                return mmyyyyDate; 
             }
         }
 
-        // Add this method for more user-friendly date display
         private string FormatDateRange(string startDate, string endDate)
         {
             string formattedStart = FormatDateForDisplay(startDate);
@@ -1196,10 +1191,8 @@ namespace WinFormsApp1
         {
 
         }
-        // Add this method to fix CS0103: The name 'SetupDateValidation' does not exist in the current context
         private void SetupDateValidation()
         {
-            // Attach validation handlers for date fields if needed
             txtStartDate.TextChanged += TxtStartDate_TextChanged;
             txtEndDate.TextChanged += TxtEndDate_TextChanged;
         }
